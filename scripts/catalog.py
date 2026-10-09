@@ -4,7 +4,6 @@ import json
 
 ROOT = Path(__file__).resolve().parents[1]
 MUSIC = Path.home() / 'Desktop/MusicMod'
-REJ = Path.home() / 'Documents/Rejuvenation Battle Theme Pack V13.5/rejuvenation v14 music port/Audio/BGM'
 
 GROUPS = [
  ('gen1', 'All_Gen1_Legendaries', 'articuno zapdos moltres mewtwo mew'),
@@ -34,7 +33,7 @@ GROUPS = [
  ('terapagos', 'Terapagos', 'terapagos'),
  ('treasures_of_ruin', 'Treasures_Of_Ruin', 'wochien chienpao tinglu chiyu'),
  ('ultra_beasts', 'Ultra_Beasts', 'nihilego buzzwole pheromosa xurkitree celesteela kartana guzzlord poipole naganadel stakataka blacephalon'),
- ('victini', 'Undertale Finale Dual Mix', 'victini'),
+ ('victini', 'Victini_Undertale', 'victini'),
 ]
 
 def catalog():
@@ -45,17 +44,17 @@ def catalog():
         imported = 'Victini_Undertale.mp3' if ident == 'victini' else filename + '.mp3'
         tracks.append(dict(id='legendary.'+ident, source=str(MUSIC / 'Legendary' / (filename+'.mp3')), imported=imported, title=filename.replace('_',' ')))
         assignments.append(dict(id=ident, species=['cobblemon:'+s for s in species.split()], sound='battlemusic:legendary.'+ident))
-    for ident, source, imported, species in [
-        ('celebi','Battle- Aquatic.mp3','Celebi.mp3','celebi'),
-        ('gen7_specials','Battle- Cyanide.mp3','Gen7_Specials.mp3','typenull silvally magearna marshadow zeraora meltan melmetal'),
-        ('gen8_specials','Battle- Popstar.mp3','Gen8_Specials.mp3','kubfu urshifu zarude')]:
-        tracks.append(dict(id='legendary.'+ident, source=str(REJ / source), imported=imported, title=imported.removesuffix('.mp3').replace('_',' ')))
+    for ident, imported, species in [
+        ('celebi','Celebi.mp3','celebi'),
+        ('gen7_specials','Gen7_Specials.mp3','typenull silvally magearna marshadow zeraora meltan melmetal'),
+        ('gen8_specials','Gen8_Specials.mp3','kubfu urshifu zarude')]:
+        tracks.append(dict(id='legendary.'+ident, source=str(MUSIC / 'Legendary' / imported), imported=imported, title=imported.removesuffix('.mp3').replace('_',' ')))
         assignments.append(dict(id=ident, species=['cobblemon:'+s for s in species.split()], sound='battlemusic:legendary.'+ident))
     tracks += [dict(id='legendary.galarian_birds', source=str(MUSIC / 'Legendary/Galarian_Legendary_Birds.mp3'), imported='Galarian_Legendary_Birds.mp3', title='Galarian Legendary Birds'),
                dict(id='legendary.victini_alternative', source=str(MUSIC / 'Legendary/Victini.mp3'), imported='Victini_Alternative.mp3', title='Victini Alternative')]
     assignments.append(dict(id='galarian_birds', species=['cobblemon:'+s for s in ('articuno','zapdos','moltres')], aspects=['galarian'], sound='battlemusic:legendary.galarian_birds', priority=300))
-    for ident, resource in [('gym','gym_battle_johto'),('elite_four','hgss/trainer_kanto'),('champion','champion_battle')]:
-        tracks.append(dict(id='trainer.kanto.'+ident, resource='cobblemon:battle/'+resource, title='Kanto '+ident.replace('_',' ').title()))
+    for ident, filename in [('gym','Gym.mp3'),('lorelei','Lorelei.mp3'),('bruno','Bruno.ogg'),('agatha','Agatha.ogg'),('lance','Lance.mp3'),('champion','Champion.mp3')]:
+        tracks.append(dict(id='trainer.kanto.'+ident, source=str(MUSIC / 'Trainer' / filename), imported='Trainer_'+filename, title='Kanto '+ident.title()+' Battle'))
     return dict(schema_version=1, tracks=tracks, assignments=assignments)
 
 def generate():
@@ -74,7 +73,7 @@ def generate():
             write(f'{kind}/{assignment["id"]}',kind,dict(battle_type='wild',**match) if kind=='base' else match,assignment['sound'],assignment.get('priority',200))
     gyms='brock misty ltsurge erika koga sabrina blaine giovanni'.split()
     for trainer in gyms: write('trainer/kanto_'+trainer,'base',dict(battle_type='trainer',trainers=['rctmod:kanto_'+trainer]),'battlemusic:trainer.kanto.gym',300)
-    for trainer in 'lorelei bruno agatha lance'.split(): write('trainer/kanto_league_'+trainer,'base',dict(battle_type='trainer',trainers=['rctmod:kanto_league_'+trainer]),'battlemusic:trainer.kanto.elite_four',300)
+    for trainer in 'lorelei bruno agatha lance'.split(): write('trainer/kanto_league_'+trainer,'base',dict(battle_type='trainer',trainers=['rctmod:kanto_league_'+trainer]),'battlemusic:trainer.kanto.'+trainer,300)
     write('trainer/kanto_champion_blue','base',dict(battle_type='trainer',trainers=['rctmod:kanto_champion_blue']),'battlemusic:trainer.kanto.champion',300)
     (ROOT/'datapack/pack.mcmeta').write_text(json.dumps({'pack':{'pack_format':48,'description':'Battle Music: generation, special Pokemon and Kanto league rules'}},indent=2)+'\n')
     print(f'Generated {len(data["tracks"])} sound events and {len(list(rules.rglob("*.json")))} rules')

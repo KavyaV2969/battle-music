@@ -2,7 +2,9 @@
 
 Private Fabric mod for Minecraft **1.21.1**, **Java 21**, **Cobblemon 1.7.3**, and Fabric API **0.116.14+1.21.1**. Optional RCT support targets **rctapi 0.15.2-beta**. Code compiles directly against the installed intermediary jars; no remapping step or downloaded game dependencies are required.
 
-The server selects encounter music from datapack rules. Clients stream the audio resource pack. An opposing special Pokémon can temporarily interrupt a trainer's music; the original sound/channel is paused and resumes at its retained position after a switch or faint. Your own Pokémon do not trigger entrance themes. PvP, spectators, and raids retain their existing playback.
+The server selects encounter music from datapack rules. Clients stream the audio resource pack. **Pokémon entrance music during trainer battles is disabled by default.** Enable it through **Mods → Cobblemon Battle Music → Configure → Pokémon entrance music in trainer battles**. This applies to trainers and bosses, except Champions, who always keep their theme. With the setting enabled, an opposing special Pokémon can interrupt a trainer's music; the original channel pauses and resumes at its retained position after a switch or faint. Changing the setting takes effect during an ongoing battle. Wild music and your own Pokémon are unaffected. PvP, spectators, and raids retain their existing playback.
+
+The settings screen uses the installed Mod Menu 11.0.4 and Cloth Config 15.0.140. Without those optional client mods, edit `config/battlemusic-client.json` to set `"trainer_entrance_music": true` and restart. Omitting the file or setting it to false disables trainer interruptions. Dedicated servers do not need either UI mod.
 
 ## Artifacts and installation
 
@@ -14,7 +16,7 @@ Build output is in `dist/`:
 | `battlemusic-defaults-0.1.0.zip` | Server/world `datapacks/` |
 | `battlemusic-audio-0.1.0.zip` | Each client's `resourcepacks/`; enable it |
 
-Restart Minecraft after changing mods. Run `/reload` after adding or changing rules. Use `/datapack list` to confirm the defaults are enabled. If necessary enable `file/battlemusic-defaults-0.1.0.zip`. Keep the existing Original Pokémon Battle Music and COBBLEVERSE Soundtrack packs enabled: the Kanto trainer aliases reference their audio paths.
+Restart Minecraft after changing mods. Run `/reload` after adding or changing rules. Use `/datapack list` to confirm the defaults are enabled. If necessary enable `file/battlemusic-defaults-0.1.0.zip`. Existing music packs can stay enabled; the six Kanto trainer events now use the recordings supplied in Desktop/MusicMod/Trainer.
 
 Music uses Minecraft's **Music** slider. This source profile had that slider at **0**; raise it to hear battle themes. The installer preserves your volume preference unless given `--music-volume 0.65`.
 
@@ -42,7 +44,7 @@ Set `BATTLEMUSIC_PYTHON` to Python 3.12+ and `JAVA_HOME` to a Java 21 JDK if nee
 & $env:BATTLEMUSIC_PYTHON scripts/audit.py
 ```
 
-`build.ps1 -SkipAudio` recompiles code and runs tests without re-encoding audio. A full build reuses unchanged encoded files by source SHA-256. `scripts/catalog.py` generates `catalog/music.json` and the default datapack from the explicit assignments in that script; edit the generator, not generated rules. Original music is copied into ignored `audio-src/`; the initial source locations are Desktop/MusicMod and the supplied Rejuvenation BGM folder. Imports include Celebi/Aquatic, Gen7 Specials/Cyanide, Gen8 Specials/Popstar, and Victini/Undertale. The old Victini recording remains an unassigned alternative.
+`build.ps1 -SkipAudio` recompiles code and runs tests without re-encoding audio. A full build reuses unchanged encoded files by source SHA-256. `scripts/catalog.py` generates `catalog/music.json` and the default datapack from the explicit assignments in that script; edit the generator, not generated rules. Original music is copied into ignored `audio-src/`; all canonical sources are now under Desktop/MusicMod. `scripts/copy_additions.py` copies Celebi/Aquatic, Gen7 Specials/Cyanide, Gen8 Specials/Popstar, and Victini/Undertale to that Desktop library, verifying hashes and refusing conflicting overwrites. The old Victini recording remains an unassigned alternative. Bruno and Agatha's Ogg inputs are normalized to the same streamed stereo Vorbis format as the MP3 inputs.
 
 No Minecraft jars, third-party mods, original MP3s, converted audio, or launcher credentials enter Git. The generated audio pack is private and is not intended for public distribution.
 
@@ -50,7 +52,7 @@ No Minecraft jars, third-party mods, original MP3s, converted audio, or launcher
 
 See [docs/AUTHORING.md](docs/AUTHORING.md), [schemas/rule.schema.json](schemas/rule.schema.json), and [examples](examples/). Server choices are authoritative; a datapack cannot supply audio bytes. Add new sound events and Ogg files to a client resource pack and reference their identifiers from a server rule. Events do not need hard-coded registry entries: the client creates resource-backed sound events by identifier.
 
-Default rules assign Gen 1–9 wild themes, special species and forms, and 13 Kanto league trainers. Kanto gyms use `gym_battle_johto`, Elite Four use `hgss/trainer_kanto`, and Blue uses `champion_battle`. Existing resource packs choose the arrangement at those paths. Trainer team/AI/field data is not changed.
+Default rules assign Gen 1–9 wild themes, special species and forms, and 13 Kanto league trainers. Eight gyms share `battlemusic:trainer.kanto.gym`; Lorelei, Bruno, Agatha and Lance each use `battlemusic:trainer.kanto.<name>`; Blue uses `battlemusic:trainer.kanto.champion`. These six events each reference their own imported recording. Trainer team/AI/field data is not changed.
 
 ## Architecture and verification
 

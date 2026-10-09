@@ -317,7 +317,7 @@
       "ogg_sha256": "fd8c84bc484e98e796866bd8796882ce7ade8a67c71f9df90579b69fa6c2aaa7",
       "seconds": 209.142,
       "source_sha256": "6f8b1f8a0934fa1a51515226c7b89d8b8bf2c15d20e98d9731d6b2f4c28ee626",
-      "title": "Undertale Finale Dual Mix"
+      "title": "Victini Undertale"
     },
     "legendary.victini_alternative": {
       "artist": "",
@@ -334,6 +334,54 @@
       "seconds": 207.935,
       "source_sha256": "3a9e9ca118bf4a79fdc7ee63b76ce1b72a317c1110964232bb9f0d6696a71c48",
       "title": "All Weather Trio"
+    },
+    "trainer.kanto.agatha": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "ab8488645f43476aa32d9721577cfa06a645af77dee65224bc0989d12e1061f5",
+      "seconds": 283.096,
+      "source_sha256": "0523f1b6124759ba5aef659fe7c123aca400532afe1c277cc1eed82c1f7b74e1",
+      "title": "Kanto Agatha Battle"
+    },
+    "trainer.kanto.bruno": {
+      "artist": "CatchDalgo",
+      "channels": 2,
+      "ogg_sha256": "5e0aa943cf1223cf579bad924c6be2a8e6000913a7eabf3514634414261a2b9c",
+      "seconds": 152.033,
+      "source_sha256": "9b11fc2024b05edcea8c0fb5bca918c9eb358b3f77821c85e2cb7742d49103d0",
+      "title": "Kanto Bruno Battle"
+    },
+    "trainer.kanto.champion": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "c1f7bbb506a48961e6a2d57b96c2f9bcb5da7d5fc7357ab4f9c248c772df117e",
+      "seconds": 220.381,
+      "source_sha256": "bf5816ac7f32cf3dcd57ae980dd8f51a1155a16777b5b24f45e68daaf091a500",
+      "title": "Kanto Champion Battle"
+    },
+    "trainer.kanto.gym": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "8648370f108a6a9b2d442d8c3f8c236b003cf7a0fcfab85db7fcf23d009e289d",
+      "seconds": 243.183,
+      "source_sha256": "d87118cef4270ddf3b977c84f9c1599e2d0c9907648d0468ff1e923b03598cdd",
+      "title": "Kanto Gym Battle"
+    },
+    "trainer.kanto.lance": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "3b581b67dccd93d941a0c658b73703e29b6616e44c4eaa6b29fb98e7b9884a77",
+      "seconds": 185.119,
+      "source_sha256": "e41b7f4a71380b1436b6b98bf86449b4059c236c4735acd248bbc2202e0914a0",
+      "title": "Kanto Lance Battle"
+    },
+    "trainer.kanto.lorelei": {
+      "artist": "GlitchxCity",
+      "channels": 2,
+      "ogg_sha256": "032cc13fce3a5db673a3895b374aa51c34ba82503f5eab0be7ba28467f74371c",
+      "seconds": 197.927,
+      "source_sha256": "8f740541c654c6c795ced874bc382c4a0af0e2bb12f1dcb78128cfa000c3f734",
+      "title": "Kanto Lorelei Battle"
     },
     "wild.gen1": {
       "artist": "The Noble Demon",

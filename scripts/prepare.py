@@ -18,6 +18,8 @@ def prepare(profile=None):
         path = meta / 'libraries' / group.replace('.', '/') / name / ver / f'{name}-{ver}.jar'
         if path.exists(): inputs.append(path)
     inputs += list((profile / 'mods').glob('rctapi-fabric-*.jar'))
+    for pattern in ('modmenu-*.jar','cloth-config-*-fabric.jar'):
+        inputs += list((profile / 'mods').glob(pattern))
     names = set()
     for path in inputs:
         if not path.is_file(): raise FileNotFoundError(path)

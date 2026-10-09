@@ -267,25 +267,25 @@
     },
     {
       "id": "legendary.victini",
-      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Undertale Finale Dual Mix.mp3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini_Undertale.mp3",
       "imported": "Victini_Undertale.mp3",
-      "title": "Undertale Finale Dual Mix"
+      "title": "Victini Undertale"
     },
     {
       "id": "legendary.celebi",
-      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Aquatic.mp3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Celebi.mp3",
       "imported": "Celebi.mp3",
       "title": "Celebi"
     },
     {
       "id": "legendary.gen7_specials",
-      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Cyanide.mp3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Gen7_Specials.mp3",
       "imported": "Gen7_Specials.mp3",
       "title": "Gen7 Specials"
     },
     {
       "id": "legendary.gen8_specials",
-      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Popstar.mp3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Gen8_Specials.mp3",
       "imported": "Gen8_Specials.mp3",
       "title": "Gen8 Specials"
     },
@@ -303,18 +303,39 @@
     },
     {
       "id": "trainer.kanto.gym",
-      "resource": "cobblemon:battle/gym_battle_johto",
-      "title": "Kanto Gym"
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Gym.mp3",
+      "imported": "Trainer_Gym.mp3",
+      "title": "Kanto Gym Battle"
     },
     {
-      "id": "trainer.kanto.elite_four",
-      "resource": "cobblemon:battle/hgss/trainer_kanto",
-      "title": "Kanto Elite Four"
+      "id": "trainer.kanto.lorelei",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Lorelei.mp3",
+      "imported": "Trainer_Lorelei.mp3",
+      "title": "Kanto Lorelei Battle"
+    },
+    {
+      "id": "trainer.kanto.bruno",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Bruno.ogg",
+      "imported": "Trainer_Bruno.ogg",
+      "title": "Kanto Bruno Battle"
+    },
+    {
+      "id": "trainer.kanto.agatha",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Agatha.ogg",
+      "imported": "Trainer_Agatha.ogg",
+      "title": "Kanto Agatha Battle"
+    },
+    {
+      "id": "trainer.kanto.lance",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Lance.mp3",
+      "imported": "Trainer_Lance.mp3",
+      "title": "Kanto Lance Battle"
     },
     {
       "id": "trainer.kanto.champion",
-      "resource": "cobblemon:battle/champion_battle",
-      "title": "Kanto Champion"
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Trainer\\Champion.mp3",
+      "imported": "Trainer_Champion.mp3",
+      "title": "Kanto Champion Battle"
     }
   ],
   "assignments": [

@@ -1,0 +1,6 @@
+{
+  "battlemusic.settings.title": "Cobblemon Battle Music",
+  "battlemusic.settings.trainer": "Trainer Battles",
+  "battlemusic.settings.trainer_entrances": "Pokémon entrance music in trainer battles",
+  "battlemusic.settings.trainer_entrances.tooltip": "Off by default. When enabled, opposing special Pokémon can interrupt trainer and boss themes. Champions always keep their theme. Wild battle music is unaffected."
+}

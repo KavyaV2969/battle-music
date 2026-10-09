@@ -21,6 +21,9 @@ def setup():
         for path in source.rglob('*'):
             if path.is_file():copy_file(path,GAME/folder/path.relative_to(source))
     for old in (GAME/'mods').glob('battlemusic*.jar'):old.unlink()
+    # Exercise the shipped default, independent of preferences from earlier isolated runs.
+    settings=GAME/'config/battlemusic-client.json'
+    if settings.exists():settings.unlink()
     copy_file(ROOT/f'dist/battlemusic-{VERSION}.jar',GAME/f'mods/battlemusic-{VERSION}.jar')
     copy_file(ROOT/'integration/battlemusic-verification.jar',GAME/'mods/battlemusic-verification.jar')
     copy_file(ROOT/f'dist/battlemusic-audio-{VERSION}.zip',GAME/f'resourcepacks/battlemusic-audio-{VERSION}.zip')

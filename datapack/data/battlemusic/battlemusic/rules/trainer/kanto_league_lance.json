@@ -8,6 +8,6 @@
       "rctmod:kanto_league_lance"
     ]
   },
-  "sound": "battlemusic:trainer.kanto.elite_four",
+  "sound": "battlemusic:trainer.kanto.lance",
   "transition_ticks": 30
 }

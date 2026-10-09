@@ -8,6 +8,6 @@
       "rctmod:kanto_league_lorelei"
     ]
   },
-  "sound": "battlemusic:trainer.kanto.elite_four",
+  "sound": "battlemusic:trainer.kanto.lorelei",
   "transition_ticks": 30
 }

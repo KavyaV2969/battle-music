@@ -13,7 +13,7 @@ import java.util.concurrent.*;
 public final class ClientFixture implements ClientModInitializer {
     private ManagedSound retained;private class_4235.class_4236 retainedChannel;private float pausedOffset;
     private Object retainedSource,retainedStream;private ManagedSound previousEntrance;
-    private int stable;private String last="";private CompletableFuture<float[]> probe;
+    private int stable,togglePhase;private boolean defaultVerified;private String last="";private CompletableFuture<float[]> probe;
     @Override public void onInitializeClient(){ClientTickEvents.END_CLIENT_TICK.register(client->{
         if(Shared.error!=null||Shared.expect.isBlank()||Shared.expect.equals(Shared.ack))return;
         try{tick();}catch(Throwable e){Shared.error=e.toString();e.printStackTrace();}
@@ -47,8 +47,21 @@ public final class ClientFixture implements ClientModInitializer {
                 if(++stable<45)return;retained=p.base();retainedChannel=channel(retained);
                 if(probe==null){probe=probe(retained);return;}if(!probe.isDone())return;
                 float[] result=probe.join();if(result[1]!=0x1012||result[2]<=0)throw new AssertionError("Base audio not audibly playing: "+Arrays.toString(result));
-                ack("Real RCT Brock battle selects Kanto gym audio through native server/client packets");break;
+                if(ClientSettings.trainerEntrances())throw new AssertionError("Trainer entrances not disabled by default");
+                var factory=new MusicModMenu().getModConfigScreenFactory();
+                if(factory==null||factory.create(null)==null)throw new AssertionError("Mod Menu settings screen unavailable");
+                Shared.checks.add("Mod Menu/Cloth Config settings screen builds with trainer entrance music disabled");
+                ack("Real RCT Brock battle selects updated Desktop gym audio through native packets");break;
             case "overlay": case "reentered":
+                if(expect.equals("overlay")&&!defaultVerified){
+                    if(p.state().entrance()==null)return;
+                    if(p.entrance()!=null||p.base().paused||p.base().gain.value()<.99)throw new AssertionError("Default-off trainer entrance interrupted base");
+                    if(++stable<35)return;
+                    Shared.checks.add("Trainer Arceus sends an entrance decision but default-off preference keeps gym audio playing");
+                    ClientSettings.setTrainerEntrances(true);ClientSettings.save();ClientSettings.load();
+                    if(!ClientSettings.trainerEntrances())throw new AssertionError("Preference did not persist");
+                    defaultVerified=true;stable=0;
+                }
                 if(p.entrance()==null||!p.entrance().method_4775().toString().equals("battlemusic:legendary.arceus")||!p.base().paused)return;
                 if(++stable<20)return;if(p.base()!=retained||channel(p.base())!=retainedChannel)throw new AssertionError("Base/channel replaced on interruption");
                 if(probe==null){probe=probe(retained);return;}if(!probe.isDone())return;
@@ -61,6 +74,31 @@ public final class ClientFixture implements ClientModInitializer {
                 if(++stable<40)return;if(probe==null){probe=probe(retained);return;}if(!probe.isDone())return;
                 float[] paused=probe.join();if(paused[1]!=0x1013||Math.abs(paused[0]-pausedOffset)>.03)throw new AssertionError("Paused music advanced: "+Arrays.toString(paused)+" from "+pausedOffset);
                 ack("Paused base stream offset remains fixed while entrance music plays");break;
+            case "toggle-off":
+                if(togglePhase==0){ClientSettings.setTrainerEntrances(false);ClientSettings.save();togglePhase=1;}
+                if(togglePhase==1){
+                    if(p.entrance()!=null||p.base().paused||p.base().gain.value()<.99)return;
+                    if(p.base()!=retained||channel(retained)!=retainedChannel)throw new AssertionError("Toggle off replaced base");
+                    Shared.checks.add("Disabling trainer interruptions mid-battle resumes retained gym channel");
+                    ClientSettings.setTrainerEntrances(true);ClientSettings.save();togglePhase=2;return;
+                }
+                if(p.entrance()==null||!p.base().paused)return;
+                if(p.base()!=retained||channel(retained)!=retainedChannel)throw new AssertionError("Toggle on replaced base");
+                ack("Enabling interruptions mid-battle starts current opponent theme using latest decision");break;
+            case "champion":
+                if(!Shared.championArceusActive)return;
+                if(!base.equals("battlemusic:trainer.kanto.champion")||channel(p.base())==null)return;
+                if(!ClientSettings.trainerEntrances()||!p.state().trainerBattle())throw new AssertionError("Champion test requires enabled trainer interruptions");
+                if(p.state().entrance()!=null||p.entrance()!=null||p.base().paused)throw new AssertionError("Champion theme interrupted by active Arceus");
+                if(++stable<45)return;
+                ack("Actual RCT Champion Blue with active Arceus keeps updated Champion theme even with interruptions enabled");break;
+            case "elite-lorelei": case "elite-bruno": case "elite-agatha": case "elite-lance":
+                String member=expect.substring(6);
+                if(!base.equals("battlemusic:trainer.kanto."+member)||channel(p.base())==null)return;
+                if(++stable<45)return;
+                if(probe==null){retainedSource=retainedStream=null;probe=probe(p.base());return;}if(!probe.isDone())return;
+                float[] elite=probe.join();if(elite[1]!=0x1012||elite[2]<=0)throw new AssertionError("Elite Four theme is not audible");
+                ack("Actual RCT "+member+" battle plays its individual imported track with positive OpenAL gain");break;
             case "resumed": case "switch-resumed":
                 if(p.entrance()!=null||p.base().paused||p.base().gain.value()<.99)return;
                 if(p.base()!=retained||channel(p.base())!=retainedChannel)throw new AssertionError("Resume recreated original sound/channel");

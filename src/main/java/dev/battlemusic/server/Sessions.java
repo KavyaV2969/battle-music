@@ -83,13 +83,14 @@ public final class Sessions {
             var rule=s.rules.select("entrance",context).orElse(null);
             if(rule!=null&&rule.sound()!=null)candidates.add(new Candidate(rule,bp.getOriginalPokemon().getUuid(),currentSlot));
         }
-        Candidate chosen=EntranceSelection.choose(candidates,s.last==null?null:s.last.pokemon());
+        boolean champion=s.type.equals("trainer")&&s.locations.values().stream().anyMatch(l->TrainerMusicPolicy.isChampion(l.trainer()));
+        Candidate chosen=champion?null:EntranceSelection.choose(candidates,s.last==null?null:s.last.pokemon());
         s.activeContexts=List.copyOf(contexts);s.entranceRule=chosen==null?"none":chosen.rule().id();
         String entrance=chosen==null?null:chosen.rule().sound();UUID pokemon=chosen==null?null:chosen.pokemon();
         if(Objects.equals(entrance,s.base)){entrance=null;pokemon=null;}
         int fade=chosen==null?30:chosen.rule().transitionTicks();
         if(!force&&s.last!=null&&Objects.equals(entrance,s.last.entrance())&&Objects.equals(pokemon,s.last.pokemon())&&Objects.equals(s.base,s.last.base()))return;
-        MusicState state=new MusicState(1,battle.getBattleId(),++s.revision,s.base,s.fallback,s.volume,s.pitch,entrance,pokemon,fade,false);
+        MusicState state=new MusicState(1,battle.getBattleId(),++s.revision,s.base,s.fallback,s.volume,s.pitch,entrance,pokemon,fade,false,s.type.equals("trainer"));
         s.last=state;ServerPlayNetworking.send(s.viewer.getEntity(),new MusicPayload(state.json()));
         BattleMusicMod.LOG.debug("Battle {} player {} base {} ({}) entrance {}",battle.getBattleId(),s.viewer.getUuid(),s.base,s.baseRule,entrance);
     }

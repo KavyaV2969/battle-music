@@ -15,6 +15,8 @@ Put rules at `data/<namespace>/battlemusic/rules/<name>.json` inside a Minecraft
 
 `kind` is `base` or `entrance`. Base chooses an encounter's underlying music. Entrance temporarily replaces that base while a matching opponent is active. The winning entrance must have a sound; a winning `sound: null` suppresses the entrance and prevents a lower-priority rule from supplying one. A base rule with `sound: null` retains the native event.
 
+Trainer entrance playback is a client preference, **off by default**, exposed in the mod's Mod Menu settings. Datapacks still select and send the current entrance decision, so enabling the preference during a battle takes effect immediately. Base trainer assignments work with either setting. Champion trainer identities suppress entrance decisions on the server regardless of client preference or rule priority. Champion detection recognizes a `champion` path component/token, including `rctmod:kanto_champion_blue`; trainer adapters for other mods should use identities such as `mypack:champion_blue` or `mypack:league/champion`. An adapter exposing an opaque ID without that token cannot be classified automatically.
+
 All supplied selector fields must match. Lists use **OR** within one field; omit a field for no restriction. Empty lists are invalid.
 
 | Selector | Meaning |

@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.util.SoundExtensionsKt;
 import dev.battlemusic.BattleMusicMod;
 import dev.battlemusic.mixin.*;
 import dev.battlemusic.net.MusicState;
+import dev.battlemusic.rules.TrainerMusicPolicy;
 import net.minecraft.*;
 import java.util.*;
 
@@ -55,7 +56,7 @@ public final class Playback {
         chooseEntrance(next);
     }
     private void chooseEntrance(MusicState next){
-        String desired=next.entrance();
+        String desired=TrainerMusicPolicy.entranceAllowed(next.trainerBattle(),ClientSettings.trainerEntrances())?next.entrance():null;
         if(desired!=null&&desired.equals(base.method_4775().toString()))desired=null;
         boolean same=entrance!=null&&Objects.equals(desired,entrance.method_4775().toString())&&Objects.equals(next.pokemon(),entrancePokemon);
         if(same)return;
@@ -73,6 +74,7 @@ public final class Playback {
         backgroundPaused=true;
         for(var category:FILTERED)SoundExtensionsKt.pauseSounds(manager(),null,category);
     }
+    public void refreshSettings(){if(state!=null&&base!=null&&!ending)chooseEntrance(state);}
     private void restoreBackground(){
         if(!backgroundPaused)return;backgroundPaused=false;
         for(var category:FILTERED)SoundExtensionsKt.resumeSounds(manager(),null,category);

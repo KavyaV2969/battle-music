@@ -10,6 +10,7 @@ import net.minecraft.*;
 
 public final class BattleMusicClient implements ClientModInitializer {
     @Override public void onInitializeClient(){
+        ClientSettings.load();
         ClientPlayNetworking.registerGlobalReceiver(MusicPayload.ID,(payload,context)->{
             try{Playback.INSTANCE.accept(MusicState.parse(payload.json()));}catch(RuntimeException e){BattleMusicMod.LOG.error("Invalid music state ignored",e);}
         });

@@ -45,6 +45,18 @@ public final class Verification {
         var envelope=new Envelope(1);envelope.to(0,30);for(int i=0;i<15;i++)envelope.tick();check(Math.abs(envelope.value()-.5)<.001,"smooth midpoint");float before=envelope.value();envelope.to(1,30);check(envelope.value()==before,"retarget keeps current gain");for(int i=0;i<30;i++)envelope.tick();check(envelope.settled()&&envelope.value()==1,"fade completes");
         var state=new MusicState(1,UUID.randomUUID(),3,"battlemusic:wild.gen1","cobblemon:battle.pvw.default",1,1,"battlemusic:legendary.arceus",UUID.randomUUID(),30,false);
         check(MusicState.parse(state.json()).equals(state),"payload roundtrip");
+        var trainerState=new MusicState(1,state.battle(),4,state.base(),state.fallback(),1,1,state.entrance(),state.pokemon(),30,false,true);
+        check(MusicState.parse(trainerState.json()).trainerBattle(),"trainer context survives networking");
+        check(!TrainerMusicPolicy.entranceAllowed(true,false),"trainer interruptions disabled by default");
+        check(TrainerMusicPolicy.entranceAllowed(true,true),"trainer interruptions can be enabled");
+        check(TrainerMusicPolicy.entranceAllowed(false,false),"wild interruptions unaffected by trainer preference");
+        for(String id:List.of("rctmod:kanto_champion_blue","rctmod:johto_champion_lance","test:champion","test:league/champion"))check(TrainerMusicPolicy.isChampion(id),"champion protected "+id);
+        for(String id:List.of("rctmod:kanto_league_lance","rctmod:kanto_brock","test:championship_qualifier"))check(!TrainerMusicPolicy.isChampion(id),"nonchampion eligible "+id);
+        check(!TrainerMusicPolicy.isChampion(null),"unknown trainer identity does not crash");
+        for(String trainer:List.of("lorelei","bruno","agatha","lance")){
+            Context c=new Context("trainer","cobblemon:geodude","Normal",Set.of(),Set.of("gen1"),"rctmod:kanto_league_"+trainer,null,null,"minecraft:overworld","minecraft:plains",Set.of(),0,64,0);
+            check(rules.select("base",c).orElseThrow().sound().equals("battlemusic:trainer.kanto."+trainer),"individual Elite Four theme "+trainer);
+        }
         UUID first=UUID.randomUUID(),second=UUID.randomUUID();
         Rule entranceRule=rules.select("entrance",context("arceus","Normal",Set.of(),Set.of("legendary"))).orElseThrow();
         var left=new EntranceSelection.Candidate(entranceRule,first,0);var right=new EntranceSelection.Candidate(entranceRule,second,1);

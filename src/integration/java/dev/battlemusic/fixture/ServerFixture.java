@@ -21,7 +21,7 @@ import java.util.*;
 public final class ServerFixture implements ModInitializer {
     private PokemonBattle battle;private PokemonEntity wild;private class_1309 trainerEntity;
     private UUID geodude,arceus;
-    private int phase,ticks,ready,switches;private boolean finished;
+    private int phase,ticks,ready,switches,eliteMember;private boolean finished;
     @Override public void onInitialize(){
         if(!Path.of("").toAbsolutePath().normalize().endsWith(Path.of("battle-music/integration/game")))throw new IllegalStateException("Fixture refuses to run outside its isolated game directory");
         ServerTickEvents.END_SERVER_TICK.register(server->{if(finished)return;try{
@@ -36,7 +36,7 @@ public final class ServerFixture implements ModInitializer {
                 case 3 -> {if(done()){stop();Shared.request("ended");phase++;}}
                 case 4 -> {if(done()){startTrainer(player);Shared.request("trainer");phase++;}}
                 case 5 -> {if(done()&&act("splash",true)){Shared.request("overlay");phase++;}}
-                case 6 -> {if(done()){Shared.request("pause-retained");phase++;}}
+                case 6 -> {if(done()){if(!Shared.expect.equals("pause-retained"))Shared.request("pause-retained");else{Shared.request("toggle-off");phase++;}}}
                 case 7 -> {if(done()){
                     if(switches==0&&act("splash",Integer.valueOf(0))){Shared.request("switch-resumed");switches++;}
                     else if(switches==1&&act("splash",true)){Shared.request("reentered");switches++;}
@@ -45,7 +45,20 @@ public final class ServerFixture implements ModInitializer {
                 case 8 -> {if(done()){if(!Shared.expect.equals("rapid"))Shared.request("rapid");else{Shared.request("stale");phase++;}}}
                 case 9 -> {if(done()){Shared.request("missing");phase++;}}
                 case 10 -> {if(done()){stop();Shared.request("ended");phase++;}}
-                case 11 -> {if(done())finish(null);}
+                case 11 -> {if(done()){startTrainer(player,"kanto_champion_blue",true);Shared.request("champion");phase++;}}
+                case 12 -> {
+                    Shared.championArceusActive=false;
+                    for(var actor:battle.getActors())if(!(actor instanceof PlayerBattleActor))for(var active:actor.getSide().getActivePokemon()){
+                        var bp=active.getBattlePokemon();
+                        if(bp!=null&&bp.getHealth()>0&&bp.getEffectedPokemon().getSpecies().getResourceIdentifier().toString().equals("cobblemon:arceus"))Shared.championArceusActive=true;
+                    }
+                    if(done()){stop();Shared.request("ended");phase++;}
+                }
+                case 13 -> {if(done()){
+                    if(eliteMember==4)finish(null);
+                    else{String member=List.of("lorelei","bruno","agatha","lance").get(eliteMember++);startTrainer(player,"kanto_league_"+member,false);Shared.request("elite-"+member);phase++;}
+                }}
+                case 14 -> {if(done()){stop();Shared.request("ended");phase=13;}}
             }
         }catch(Throwable e){finish(e);}});
     }
@@ -60,15 +73,22 @@ public final class ServerFixture implements ModInitializer {
         if(!(result instanceof SuccessfulBattleStart success))throw new IllegalStateException("Wild battle rejected: "+result);battle=success.getBattle();
     }
     private void startTrainer(class_3222 player)throws Exception{
+        startTrainer(player,"kanto_brock",false);
+    }
+    private void startTrainer(class_3222 player,String trainerId,boolean specialLead)throws Exception{
         party(player);
-        var entry=RCTApi.getInstances().filter(e->e.getValue().getTrainerRegistry().getById("kanto_brock") instanceof TrainerNPC).findFirst().orElseThrow();
-        var api=entry.getValue();var trainer=(TrainerNPC)api.getTrainerRegistry().getById("kanto_brock");
-        var team=trainer.getTeam();team[0]=pokemon(player,"geodude",5);team[1]=pokemon(player,"arceus",5);
+        var entry=RCTApi.getInstances().filter(e->e.getValue().getTrainerRegistry().getById(trainerId) instanceof TrainerNPC).findFirst().orElseThrow();
+        var api=entry.getValue();var trainer=(TrainerNPC)api.getTrainerRegistry().getById(trainerId);
+        var team=trainer.getTeam();team[0]=pokemon(player,specialLead?"arceus":"geodude",5);team[1]=pokemon(player,specialLead?"geodude":"arceus",5);
+        // Some supplied boss teams exceed Cobblemon's clone-time EV limit. This fixture
+        // runs only in the guarded isolated directory and never saves trainer templates.
+        for(var member:team)if(member!=null)member.setEvs$common(new com.cobblemon.mod.common.pokemon.EVs());
         Class<?> mob=Class.forName("com.gitlab.srcmc.rctmod.world.entities.TrainerMob");
         trainerEntity=(class_1309)((class_1299<?>)mob.getMethod("getEntityType").invoke(null)).method_5883(player.method_51469());
-        mob.getMethod("setTrainerId",String.class).invoke(trainerEntity,"kanto_brock");trainerEntity.method_5814(player.method_23317()+2,player.method_23318(),player.method_23321());player.method_51469().method_8649(trainerEntity);trainer.setEntity(trainerEntity);
-        var me=api.getTrainerRegistry().registerPlayer("battlemusic_fixture",player);
-        if(!api.getBattleManager().startSingle(me,trainer))throw new IllegalStateException("RCT Brock battle rejected");
+        mob.getMethod("setTrainerId",String.class).invoke(trainerEntity,trainerId);trainerEntity.method_5814(player.method_23317()+2,player.method_23318(),player.method_23321());player.method_51469().method_8649(trainerEntity);trainer.setEntity(trainerEntity);
+        var me=api.getTrainerRegistry().getById("battlemusic_fixture",com.gitlab.srcmc.rctapi.api.trainer.TrainerPlayer.class);
+        if(me==null)me=api.getTrainerRegistry().registerPlayer("battlemusic_fixture",player);
+        if(!api.getBattleManager().startSingle(me,trainer))throw new IllegalStateException("RCT battle rejected: "+trainerId);
         battle=BattleRegistry.getBattleByParticipatingPlayer(player);
         if(battle==null)throw new IllegalStateException("RCT battle missing");
         // RCT creates battle copies, whose UUIDs differ from the registry team templates.
@@ -90,7 +110,13 @@ public final class ServerFixture implements ModInitializer {
         }
         battle.checkForInputDispatch();return true;
     }
-    private void stop(){if(battle!=null)battle.stop();battle=null;if(wild!=null)wild.method_31472();wild=null;if(trainerEntity!=null)trainerEntity.method_31472();trainerEntity=null;}
+    private void stop(){
+        if(battle!=null){
+            var manager=com.gitlab.srcmc.rctapi.api.battle.BattleManager.of(battle);
+            if(manager!=null)manager.end(battle.getBattleId(),true);else battle.stop();
+        }
+        battle=null;if(wild!=null)wild.method_31472();wild=null;if(trainerEntity!=null)trainerEntity.method_31472();trainerEntity=null;
+    }
     private void finish(Throwable error){
         finished=true;var report=new JsonObject();report.addProperty("success",error==null);report.addProperty("phase",phase);report.add("checks",new Gson().toJsonTree(Shared.checks));report.add("measurements",Shared.measurements);
         if(error!=null){report.addProperty("error",error.toString());if(battle!=null)report.add("battleLog",new Gson().toJsonTree(battle.getBattleLog()));error.printStackTrace();}
