@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:nihilego",
+      "cobblemon:buzzwole",
+      "cobblemon:pheromosa",
+      "cobblemon:xurkitree",
+      "cobblemon:celesteela",
+      "cobblemon:kartana",
+      "cobblemon:guzzlord",
+      "cobblemon:poipole",
+      "cobblemon:naganadel",
+      "cobblemon:stakataka",
+      "cobblemon:blacephalon"
+    ]
+  },
+  "sound": "battlemusic:legendary.ultra_beasts",
+  "transition_ticks": 30
+}

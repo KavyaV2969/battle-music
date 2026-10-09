@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:uxie",
+      "cobblemon:mesprit",
+      "cobblemon:azelf"
+    ]
+  },
+  "sound": "battlemusic:legendary.lake_guardians",
+  "transition_ticks": 30
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:kubfu",
+      "cobblemon:urshifu",
+      "cobblemon:zarude"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen8_specials",
+  "transition_ticks": 30
+}

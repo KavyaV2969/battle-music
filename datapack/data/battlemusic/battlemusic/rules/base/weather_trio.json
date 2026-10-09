@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:kyogre",
+      "cobblemon:groudon",
+      "cobblemon:rayquaza"
+    ]
+  },
+  "sound": "battlemusic:legendary.weather_trio",
+  "transition_ticks": 30
+}

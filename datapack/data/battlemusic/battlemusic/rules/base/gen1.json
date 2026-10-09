@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:articuno",
+      "cobblemon:zapdos",
+      "cobblemon:moltres",
+      "cobblemon:mewtwo",
+      "cobblemon:mew"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen1",
+  "transition_ticks": 30
+}

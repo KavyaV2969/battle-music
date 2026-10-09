@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:greattusk",
+      "cobblemon:screamtail",
+      "cobblemon:brutebonnet",
+      "cobblemon:fluttermane",
+      "cobblemon:slitherwing",
+      "cobblemon:sandyshocks",
+      "cobblemon:roaringmoon",
+      "cobblemon:irontreads",
+      "cobblemon:ironbundle",
+      "cobblemon:ironhands",
+      "cobblemon:ironjugulis",
+      "cobblemon:ironmoth",
+      "cobblemon:ironthorns",
+      "cobblemon:ironvaliant"
+    ]
+  },
+  "sound": "battlemusic:legendary.paradox",
+  "transition_ticks": 30
+}

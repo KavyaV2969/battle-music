@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:nihilego",
+      "cobblemon:buzzwole",
+      "cobblemon:pheromosa",
+      "cobblemon:xurkitree",
+      "cobblemon:celesteela",
+      "cobblemon:kartana",
+      "cobblemon:guzzlord",
+      "cobblemon:poipole",
+      "cobblemon:naganadel",
+      "cobblemon:stakataka",
+      "cobblemon:blacephalon"
+    ]
+  },
+  "sound": "battlemusic:legendary.ultra_beasts",
+  "transition_ticks": 30
+}

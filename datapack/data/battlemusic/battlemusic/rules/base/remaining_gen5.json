@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:cobalion",
+      "cobblemon:terrakion",
+      "cobblemon:virizion",
+      "cobblemon:tornadus",
+      "cobblemon:thundurus",
+      "cobblemon:landorus",
+      "cobblemon:keldeo",
+      "cobblemon:meloetta",
+      "cobblemon:genesect",
+      "cobblemon:enamorus"
+    ]
+  },
+  "sound": "battlemusic:legendary.remaining_gen5",
+  "transition_ticks": 30
+}

@@ -1,0 +1,411 @@
+{
+  "encoding": {
+    "channels": 2,
+    "codec": "Vorbis",
+    "quality": 5,
+    "sample_rate": 44100
+  },
+  "schema_version": 1,
+  "tracks": {
+    "legendary.arceus": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "93ff0a0040110c6ff760c2fd2de8d90adf5028fddffc4eb6f676b48b59389e5c",
+      "seconds": 289.948,
+      "source_sha256": "2f503754dfba5ee4b23d4e2745a618ce4636346430db9564d32a686d35c1f5d8",
+      "title": "Arceus"
+    },
+    "legendary.calyrex": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "4deb240f20c4dde967ef047fd57d1bed5f324379ba24310e3985c4a3df1bddda",
+      "seconds": 312.68,
+      "source_sha256": "4c4d926fc554c847109c24df97108c74b9b588d5e0f1d55f53fc8bbdf9010e8f",
+      "title": "Calyrex"
+    },
+    "legendary.celebi": {
+      "artist": "CloudNinja",
+      "channels": 2,
+      "ogg_sha256": "cefee75cdbad2dd252e10489cadc5c302e01b9e053be76031769db3dcb8205b6",
+      "seconds": 302.04,
+      "source_sha256": "ab68a22a05b1923fcfabc2cb373377356fe94ff1ed59c23773d0d81de5b69b12",
+      "title": "Celebi"
+    },
+    "legendary.cosmog_family": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "abd3db5a3ef9ff73e84443bf2807c85d5c83f174ae3faf8b907d318ee9c5162e",
+      "seconds": 412.061,
+      "source_sha256": "2f0dfaf21ecc624ca51b737aa371040cdaae7fa904780a01f00654ba1cb9f8c7",
+      "title": "Cosmog Cosmoem Lunala Solgaleo"
+    },
+    "legendary.deoxys": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "d8520913cf714ec1390a634ae5f5a935909d934797fa98f8815af70eb8653d25",
+      "seconds": 325.985,
+      "source_sha256": "a9f413c96dc8b677658ae146b010f41428ba32817820014c1f09625ef73c7431",
+      "title": "Deoxys"
+    },
+    "legendary.dialga_palkia": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "7b6863eb7c31a822512691a2209e91794ac46421ca5ee13c12adef922c8e9d1a",
+      "seconds": 258.113,
+      "source_sha256": "f3ef67c0154a1e4377be446626ef2258bec8f67e079936e2ffe410fb4a466ff6",
+      "title": "Dialga Palkia"
+    },
+    "legendary.entei": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "3112f9952adab9957694c1e55970b5a17f6df52f087ee8281b8c29a141c8e2ab",
+      "seconds": 179.746,
+      "source_sha256": "5b9f624003ddef9defa52dfadd20d2c29a53c78bb56ac4cf93770ce8d9208012",
+      "title": "Entei"
+    },
+    "legendary.eternatus": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "1dfe8d63240e1a7fde7000b657781341b1c9418d479915d8d727d6687346509d",
+      "seconds": 570.863,
+      "source_sha256": "eddc09ebb45262f12837a2fe281b87bea1677cd53a339bfbc633b9fe909dbfb6",
+      "title": "Eternatus"
+    },
+    "legendary.galar_dogs": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "ad39eb0cca194f14d1a0849666fd3099df68fbaa663ca2326298e1675a81128e",
+      "seconds": 232.966,
+      "source_sha256": "65eac53345a248c7ec74e898f913a5383b8f421eed7704217ce02ff1f087ce9c",
+      "title": "Galar Dogs"
+    },
+    "legendary.galar_horses": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "bfca5327823357e7b1e283c65984621aa3c5de0c1623fdf4f855b5f19a615360",
+      "seconds": 300.048,
+      "source_sha256": "7071780327e65cd9773664d61a5fdb4051ba17d91ba961cf6023dabfc795453e",
+      "title": "Galarian Horses"
+    },
+    "legendary.galarian_birds": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "8b9ab0a5e11c980514c241d28e3b339de6650b92f348adf8f22ca7251932c868",
+      "seconds": 453.95,
+      "source_sha256": "68a98e5253f566dfc7940399253b501424fde9a527834c8b89081e7e6c71827d",
+      "title": "Galarian Legendary Birds"
+    },
+    "legendary.gen1": {
+      "artist": "GlitchxCity",
+      "channels": 2,
+      "ogg_sha256": "400711b6b2eddeb5f0e51e03a70370c13e0d24300d3b83734713e23f67aefa4a",
+      "seconds": 192.737,
+      "source_sha256": "ccfc22ca021c862d2c362b2b103954d7e39c4608b23f0fa43b0d84e5971e0f23",
+      "title": "All Gen1 Legendaries"
+    },
+    "legendary.gen6": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "842f81ce0351298a5120c629dafe597dd6c4b4dfe90ee5599cc15ee391f8f101",
+      "seconds": 260.946,
+      "source_sha256": "acbf764f19675839cf5c0e1d74a3b0ce06db2fede024c13637c761eec5a7badc",
+      "title": "All Gen6 Legendaries"
+    },
+    "legendary.gen7_specials": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "7cbe2a842deac71ac8211ef81b136443a1446be1b977cba54f15c2172f3925ad",
+      "seconds": 240.013,
+      "source_sha256": "c36df647c73d2628b73195286c3581aa921d186519f01eed8346b484561cd253",
+      "title": "Gen7 Specials"
+    },
+    "legendary.gen8_specials": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "b3e033ac60835b55cfbb810aaa212cd9b19f5ba15c155025882ac6d86584b8a5",
+      "seconds": 237.203,
+      "source_sha256": "fc25be5275221c21992c96aa3a1d2caded77b857faa1b7a9e28be3767120fd7e",
+      "title": "Gen8 Specials"
+    },
+    "legendary.giratina": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "c3544f63d31083f43cc48f89e284b5f2ef13b4d341044a9234e77cb3ee7b23c8",
+      "seconds": 298.005,
+      "source_sha256": "a1660c33201c3c64c886ed50b38f497521414762ba8ce1e5c78939df6b1c6ace",
+      "title": "Giratina"
+    },
+    "legendary.ho_oh": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "d253c4de3cebc41c14154f8b86597d8854756a42c730913494045968b608abab",
+      "seconds": 220.264,
+      "source_sha256": "de4e74ddd84c0ed464570a05b168e99d1bd496a5ca0926ecb4f1c00d81b8e890",
+      "title": "Ho-oh"
+    },
+    "legendary.lake_guardians": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "ef8f5152d0c28c5b8357877c6ec4adbfe087b126817475ccea881201a1486c6f",
+      "seconds": 290.621,
+      "source_sha256": "661be83f38c1bf2649b013e0a34aa116e6d5ed4e112d387d406f319d9cf0210b",
+      "title": "Lake Guardian Trio"
+    },
+    "legendary.loyal_three": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "8675fe7ed9388b28580d53f8ec452fa323a02fbbee9b58dd6af9715fcf0a17fd",
+      "seconds": 300.048,
+      "source_sha256": "83366626bc724fbeffee78fc98e23584b4cecf663a634b5788413bec77764689",
+      "title": "Loyal Three"
+    },
+    "legendary.lugia": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "b7f49e9aaaac6620687bd901154dc91a4318af9543d2668f0449ebbfbcb73596",
+      "seconds": 339.847,
+      "source_sha256": "2da04341a9ccdd592617ee44c59d272510d19f7729362bca7482cbda6e96ca58",
+      "title": "Lugia"
+    },
+    "legendary.miraidon_koraidon": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "04024ca8623b4cbbae0d1a6394026c0ff758b9bd3c9bbcde08e39c41792a9433",
+      "seconds": 368.222,
+      "source_sha256": "dd7bba87d071df66825c6eaabf7e238df263f473fe48a48007500481943f3554",
+      "title": "Miraidon Koraidon"
+    },
+    "legendary.necrozma": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "c2e6c77d522af957599bb6a30292d465b72c3f1a62847c17025c205596d0bbc6",
+      "seconds": 166.232,
+      "source_sha256": "b11f7cb0f00457266502a2218bb82b8d02bd6cc9283ea43a3e0b348bee973dd7",
+      "title": "Necrozma"
+    },
+    "legendary.ogerpon": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "99e87015d4fa3022ee295aa26daa937ee894ed3ac880663bd42047c9b5f0fb1c",
+      "seconds": 249.707,
+      "source_sha256": "95e7deddf70365d16cb90294da8bade8e72fcf6e6593776d6ab549334bc23870",
+      "title": "Ogerpon"
+    },
+    "legendary.paradox": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "2dc0140fad0416ddb61a5df8f95dbd70ca50a245e8cf1882d4d6b13b3ca2e6e2",
+      "seconds": 243.368,
+      "source_sha256": "2bd8d027f41bfc799edfc2a257a481fa09a57aad7a9d049bb212af115b62af89",
+      "title": "Paradox"
+    },
+    "legendary.paradox_future_trio": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "007cd865c8240c99abe274d463fe09f078632e64a6446439c561c9df0e78024e",
+      "seconds": 196.325,
+      "source_sha256": "8ce575a9b1bb1560ad6f698d0f14e6b968b0de307d61af26e26ad1ac8abb549d",
+      "title": "Paradox Future Gen5 Legendaries"
+    },
+    "legendary.paradox_past_trio": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "121fdadf3a553bef7d3ff610f2209508e7dc3b1b110b416b5900fe44ef07f526",
+      "seconds": 214.297,
+      "source_sha256": "1121b8d4d88ff615b56995fc3bd6feb52e3baefe07bd54eb2e10102c576c6d41",
+      "title": "Paradox Past Gen3 Legendaries"
+    },
+    "legendary.pecharunt": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "db7fc90af3b0ee88196330945f26cc071ee408653d5e7ee18bf872a668ff3149",
+      "seconds": 300.048,
+      "source_sha256": "3298b587e74c67d152dfee30de95ee459ca3be48e491ace82093c3e2f4b735fe",
+      "title": "Pecharunt"
+    },
+    "legendary.raikou": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "7ca6f9453fa0f42c6b83086befb52b844a7a1b5ae2fd6f2ff46e5ecf269f253e",
+      "seconds": 486.551,
+      "source_sha256": "0d9a51a2c046df79597a8163857adbe3cecc13a86a2574017a8a619492620230",
+      "title": "Raikou"
+    },
+    "legendary.regi": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "566e3645724c666db43df0b3de5f4085d98b5ae579d79649c2e0d6415f0313fb",
+      "seconds": 264.429,
+      "source_sha256": "b9c2333cbaff04889b9a78b69a8bcede8c1ab258e3bbe404cc5b13012eaccfc4",
+      "title": "All Regi"
+    },
+    "legendary.remaining_gen3": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "fcc744374c39b652b48341a7349a6e1fec07337cd2f0c9a9aeff6d20a156f6c0",
+      "seconds": 221.379,
+      "source_sha256": "5013a2024f61c1bc3179f6f61676180e1c8f33ad2cacfb81c4cdff61202aa8fd",
+      "title": "Remaining Gen3 Legendaries"
+    },
+    "legendary.remaining_gen4": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "7f155c8fc3a502046b39258f9776bfdbca9e0fa6fcef9e318debc1c4f0d976b4",
+      "seconds": 255.28,
+      "source_sha256": "de017be8a5ae3550f4563b33c0fb95ace621e56f30bb2da9fe75a181cfae3fd3",
+      "title": "Remaining Gen4 Legendaries"
+    },
+    "legendary.remaining_gen5": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "572a7ec50c0751544e98cea3fb582bd0e5fdbfdec378197732030bed5c42e7e0",
+      "seconds": 343.864,
+      "source_sha256": "0e7452f3164f7f79911175e3f76a8b2772e3532edbb355a26dd446fbd50b53a1",
+      "title": "Remaining Gen5 Legendaries"
+    },
+    "legendary.suicune": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "8395d389c849d25e2a616a80048a58b39750b795d1aa8ba51e46f39453f369b7",
+      "seconds": 201.621,
+      "source_sha256": "c0b13eb7978f67c602a2c174e8b97a8b595f073bbb89b1a9f143a5e12e3d95ef",
+      "title": "Suicune"
+    },
+    "legendary.tao_trio": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "9d39c305383ce6010286e014ad4d5ae6b8a55329c40694b9a73dd9c85f4164ac",
+      "seconds": 268.33,
+      "source_sha256": "c0c0c76a343d6a761d99ec436f4c8c2284fa6da9826a70c21396042d8c354688",
+      "title": "Tao Trio"
+    },
+    "legendary.tapu": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "4028a046f26db617e82517a01365e4a40ef16a1639bbf672fa4b06804bc13654",
+      "seconds": 282.424,
+      "source_sha256": "6e382112f0800e41ac23689f6984f1e21a4f58ac848592f56c4fcf57703b0997",
+      "title": "Tapu Quartet"
+    },
+    "legendary.terapagos": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "f4916538c19bc9ce39ed553d7497a1ef439022180a57cb1b2bb5ad589e5c69ae",
+      "seconds": 330.397,
+      "source_sha256": "fe322f7e5874c871413c4df3ecf3a535214e35739f0f0d0c7f90235d21ccbba2",
+      "title": "Terapagos"
+    },
+    "legendary.treasures_of_ruin": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "db4a0dc738a90b22cce20c25634ec7220c8d6502f4f4197e274172f38244bfb2",
+      "seconds": 187.571,
+      "source_sha256": "98f84a276962c04074afa0829649d8642c07239b144a01d842ad09ac30c3e81b",
+      "title": "Treasures Of Ruin"
+    },
+    "legendary.ultra_beasts": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "fefb5a7aac6cb639697910a343289f84f38b55d62ee12bbadad79311138fa811",
+      "seconds": 453.439,
+      "source_sha256": "d5b337619ff58d2f72dd576a4b21e97bb66b1c2174ca7c118333514f22dc470a",
+      "title": "Ultra Beasts"
+    },
+    "legendary.victini": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "fd8c84bc484e98e796866bd8796882ce7ade8a67c71f9df90579b69fa6c2aaa7",
+      "seconds": 209.142,
+      "source_sha256": "6f8b1f8a0934fa1a51515226c7b89d8b8bf2c15d20e98d9731d6b2f4c28ee626",
+      "title": "Undertale Finale Dual Mix"
+    },
+    "legendary.victini_alternative": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "7cde3413ef08e5b043f7338b4f9464491a9ab19170e86ebda9d27620fa55cc2d",
+      "seconds": 199.182,
+      "source_sha256": "97e364d9c71a4911fddfd2e84fe782ba3199e4f7b5bc8979f248ac6670947dca",
+      "title": "Victini Alternative"
+    },
+    "legendary.weather_trio": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "a8eed7b7ad8c52b5a02c4d296de84566e9c0854b9325b24baaae53a279f66974",
+      "seconds": 207.935,
+      "source_sha256": "3a9e9ca118bf4a79fdc7ee63b76ce1b72a317c1110964232bb9f0d6696a71c48",
+      "title": "All Weather Trio"
+    },
+    "wild.gen1": {
+      "artist": "The Noble Demon",
+      "channels": 2,
+      "ogg_sha256": "e31be0d21352c00baf74e73e1570f00f70843fd9d368b35e740c9f6b04e5cdee",
+      "seconds": 172.117,
+      "source_sha256": "1dacc2b0664fd22cd7eca69966d459f94c93a775fe7801cf395ba5a54e79b85e",
+      "title": "Generation 1 Wild Battle"
+    },
+    "wild.gen2": {
+      "artist": "GlitchxCity",
+      "channels": 2,
+      "ogg_sha256": "6c342e82822843c95da85bd13490b6766bc0ae3bc322a378c63d2cd04b570eb5",
+      "seconds": 246.891,
+      "source_sha256": "4bf96660df852db4371e682b0de7a6c9032d0cc644c33f1395e6b54be009870f",
+      "title": "Generation 2 Wild Battle"
+    },
+    "wild.gen3": {
+      "artist": "Zame",
+      "channels": 2,
+      "ogg_sha256": "42247161f505c6d69502f51ec5d60d5ae73b3515b0d6af9cd67c3fd182083826",
+      "seconds": 180.971,
+      "source_sha256": "a78ff7e057bebdabcef8ef28c404e811d2989bb21752e16f1f482249bda7cdf6",
+      "title": "Generation 3 Wild Battle"
+    },
+    "wild.gen4": {
+      "artist": "Vetrom",
+      "channels": 2,
+      "ogg_sha256": "9d9ae1fcc98e58c39cc09fc4c4af68a760f5df0770b94a3d1aebfd1ab459a952",
+      "seconds": 253.504,
+      "source_sha256": "d7d02981a7b23d8b9b4818c97bbaefe9672f1ced10e456feac19633091419891",
+      "title": "Generation 4 Wild Battle"
+    },
+    "wild.gen5": {
+      "artist": "Zame",
+      "channels": 2,
+      "ogg_sha256": "bb0988d6a527ec40d920a9eaf994edea3e8142817d2502b5e73d4eba1f7e8e6d",
+      "seconds": 486.412,
+      "source_sha256": "b583d8948b91237a13b2930b6f10dd3cda80724e5addd67c7664abae599bb2d0",
+      "title": "Generation 5 Wild Battle"
+    },
+    "wild.gen6": {
+      "artist": "Zame",
+      "channels": 2,
+      "ogg_sha256": "e498d8544f2d86ed19a72e9bd7a6059054a3a74789a4a38d4d39aabc07cdbc7f",
+      "seconds": 117.995,
+      "source_sha256": "924abe9f09db1209f986aaf4e4cae835498ae2fb553449aff5214c46626d4f86",
+      "title": "Generation 6 Wild Battle"
+    },
+    "wild.gen7": {
+      "artist": "Bliitzit",
+      "channels": 2,
+      "ogg_sha256": "9db332715481a634d37e54ba0f81eeb4740a3fca81858554c0f4960997a7e5d4",
+      "seconds": 251.456,
+      "source_sha256": "ba7843808aac1c37c192cbd76f533e3e1d668d6c014950cb9dd20411a11ee0d5",
+      "title": "Generation 7 Wild Battle"
+    },
+    "wild.gen8": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "96c32d2134a0d83c63770b0a9e30ab8827641f460089a230f9dc0dfcc49ba827",
+      "seconds": 387.773,
+      "source_sha256": "3fed8ba88b916b83bc9c33abf18d1c005299997110ed751c02eaddf89be38d4d",
+      "title": "Generation 8 Wild Battle"
+    },
+    "wild.gen9": {
+      "artist": "",
+      "channels": 2,
+      "ogg_sha256": "a838134b959af102a790fd8dee72768dca9d91e3bf4dfacdac96ce61a32f843d",
+      "seconds": 214.32,
+      "source_sha256": "d27af95c5aeac9b035dbed3b76c219280925d0499f57aaf35a32b3274c24f7ef",
+      "title": "Generation 9 Wild Battle"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "battlemusic",
+  "version": "0.1.0",
+  "name": "Cobblemon Battle Music",
+  "description": "Private datapack-driven encounter themes and resumable Pokemon entrance music.",
+  "environment": "*",
+  "entrypoints": {"main": ["dev.battlemusic.BattleMusicMod"], "client": ["dev.battlemusic.client.BattleMusicClient"]},
+  "mixins": ["battlemusic.mixins.json"],
+  "depends": {"fabricloader": ">=0.18.4", "fabric-api": ">=0.116.14", "minecraft": "1.21.1", "java": ">=21", "cobblemon": "1.7.3+1.21.1"},
+  "license": "LicenseRef-Private"
+}

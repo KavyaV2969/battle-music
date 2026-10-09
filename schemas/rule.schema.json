@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:battlemusic:rule:1",
+  "title": "Battle Music rule v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "match", "sound"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"enum": ["base", "entrance"]},
+    "priority": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647, "default": 500},
+    "sound": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+    "transition_ticks": {"type": "integer", "minimum": 1, "maximum": 1200, "default": 30},
+    "match": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "battle_type": {"enum": ["wild", "trainer"]},
+        "species": {"$ref": "#/$defs/identifiers"},
+        "trainers": {"$ref": "#/$defs/identifiers"},
+        "encounters": {"$ref": "#/$defs/identifiers"},
+        "dimensions": {"$ref": "#/$defs/identifiers"},
+        "forms": {"$ref": "#/$defs/strings"},
+        "aspects": {"$ref": "#/$defs/strings"},
+        "labels": {"$ref": "#/$defs/strings"},
+        "pokemon_uuids": {"type": "array", "minItems": 1, "maxItems": 1024, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"}},
+        "biomes": {"type": "array", "minItems": 1, "maxItems": 1024, "uniqueItems": true, "items": {"type": "string", "pattern": "^#?[a-z0-9_.-]+:[a-z0-9_./-]+$"}},
+        "box": {"type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {"min": {"$ref": "#/$defs/point"}, "max": {"$ref": "#/$defs/point"}}}
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9_.-]+:[a-z0-9_./-]+$"},
+    "identifiers": {"type": "array", "minItems": 1, "maxItems": 1024, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+    "strings": {"type": "array", "minItems": 1, "maxItems": 1024, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "point": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+  }
+}

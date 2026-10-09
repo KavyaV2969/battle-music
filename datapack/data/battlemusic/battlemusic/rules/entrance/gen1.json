@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:articuno",
+      "cobblemon:zapdos",
+      "cobblemon:moltres",
+      "cobblemon:mewtwo",
+      "cobblemon:mew"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen1",
+  "transition_ticks": 30
+}

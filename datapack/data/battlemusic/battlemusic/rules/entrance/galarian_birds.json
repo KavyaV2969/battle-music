@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 300,
+  "match": {
+    "species": [
+      "cobblemon:articuno",
+      "cobblemon:zapdos",
+      "cobblemon:moltres"
+    ],
+    "aspects": [
+      "galarian"
+    ]
+  },
+  "sound": "battlemusic:legendary.galarian_birds",
+  "transition_ticks": 30
+}

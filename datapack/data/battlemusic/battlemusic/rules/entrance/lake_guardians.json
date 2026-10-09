@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:uxie",
+      "cobblemon:mesprit",
+      "cobblemon:azelf"
+    ]
+  },
+  "sound": "battlemusic:legendary.lake_guardians",
+  "transition_ticks": 30
+}

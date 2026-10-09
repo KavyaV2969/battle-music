@@ -1,0 +1,694 @@
+{
+  "schema_version": 1,
+  "tracks": [
+    {
+      "id": "wild.gen1",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen1.mp3",
+      "imported": "Gen1.mp3",
+      "title": "Generation 1 Wild Battle"
+    },
+    {
+      "id": "wild.gen2",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen2.mp3",
+      "imported": "Gen2.mp3",
+      "title": "Generation 2 Wild Battle"
+    },
+    {
+      "id": "wild.gen3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen3.mp3",
+      "imported": "Gen3.mp3",
+      "title": "Generation 3 Wild Battle"
+    },
+    {
+      "id": "wild.gen4",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen4.mp3",
+      "imported": "Gen4.mp3",
+      "title": "Generation 4 Wild Battle"
+    },
+    {
+      "id": "wild.gen5",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen5.mp3",
+      "imported": "Gen5.mp3",
+      "title": "Generation 5 Wild Battle"
+    },
+    {
+      "id": "wild.gen6",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen6.mp3",
+      "imported": "Gen6.mp3",
+      "title": "Generation 6 Wild Battle"
+    },
+    {
+      "id": "wild.gen7",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen7.mp3",
+      "imported": "Gen7.mp3",
+      "title": "Generation 7 Wild Battle"
+    },
+    {
+      "id": "wild.gen8",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen8.mp3",
+      "imported": "Gen8.mp3",
+      "title": "Generation 8 Wild Battle"
+    },
+    {
+      "id": "wild.gen9",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Gen9.mp3",
+      "imported": "Gen9.mp3",
+      "title": "Generation 9 Wild Battle"
+    },
+    {
+      "id": "legendary.gen1",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\All_Gen1_Legendaries.mp3",
+      "imported": "All_Gen1_Legendaries.mp3",
+      "title": "All Gen1 Legendaries"
+    },
+    {
+      "id": "legendary.gen6",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\All_Gen6_Legendaries.mp3",
+      "imported": "All_Gen6_Legendaries.mp3",
+      "title": "All Gen6 Legendaries"
+    },
+    {
+      "id": "legendary.regi",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\All_Regi.mp3",
+      "imported": "All_Regi.mp3",
+      "title": "All Regi"
+    },
+    {
+      "id": "legendary.weather_trio",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\All_Weather_Trio.mp3",
+      "imported": "All_Weather_Trio.mp3",
+      "title": "All Weather Trio"
+    },
+    {
+      "id": "legendary.arceus",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Arceus.mp3",
+      "imported": "Arceus.mp3",
+      "title": "Arceus"
+    },
+    {
+      "id": "legendary.calyrex",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Calyrex.mp3",
+      "imported": "Calyrex.mp3",
+      "title": "Calyrex"
+    },
+    {
+      "id": "legendary.cosmog_family",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Cosmog_Cosmoem_Lunala_Solgaleo.mp3",
+      "imported": "Cosmog_Cosmoem_Lunala_Solgaleo.mp3",
+      "title": "Cosmog Cosmoem Lunala Solgaleo"
+    },
+    {
+      "id": "legendary.deoxys",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Deoxys.mp3",
+      "imported": "Deoxys.mp3",
+      "title": "Deoxys"
+    },
+    {
+      "id": "legendary.dialga_palkia",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Dialga_Palkia.mp3",
+      "imported": "Dialga_Palkia.mp3",
+      "title": "Dialga Palkia"
+    },
+    {
+      "id": "legendary.entei",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Entei.mp3",
+      "imported": "Entei.mp3",
+      "title": "Entei"
+    },
+    {
+      "id": "legendary.eternatus",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Eternatus.mp3",
+      "imported": "Eternatus.mp3",
+      "title": "Eternatus"
+    },
+    {
+      "id": "legendary.galar_dogs",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Galar_Dogs.mp3",
+      "imported": "Galar_Dogs.mp3",
+      "title": "Galar Dogs"
+    },
+    {
+      "id": "legendary.galar_horses",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Galarian_Horses.mp3",
+      "imported": "Galarian_Horses.mp3",
+      "title": "Galarian Horses"
+    },
+    {
+      "id": "legendary.giratina",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Giratina.mp3",
+      "imported": "Giratina.mp3",
+      "title": "Giratina"
+    },
+    {
+      "id": "legendary.ho_oh",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Ho-oh.mp3",
+      "imported": "Ho-oh.mp3",
+      "title": "Ho-oh"
+    },
+    {
+      "id": "legendary.lake_guardians",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Lake_Guardian_Trio.mp3",
+      "imported": "Lake_Guardian_Trio.mp3",
+      "title": "Lake Guardian Trio"
+    },
+    {
+      "id": "legendary.loyal_three",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Loyal_Three.mp3",
+      "imported": "Loyal_Three.mp3",
+      "title": "Loyal Three"
+    },
+    {
+      "id": "legendary.lugia",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Lugia.mp3",
+      "imported": "Lugia.mp3",
+      "title": "Lugia"
+    },
+    {
+      "id": "legendary.miraidon_koraidon",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Miraidon_Koraidon.mp3",
+      "imported": "Miraidon_Koraidon.mp3",
+      "title": "Miraidon Koraidon"
+    },
+    {
+      "id": "legendary.necrozma",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Necrozma.mp3",
+      "imported": "Necrozma.mp3",
+      "title": "Necrozma"
+    },
+    {
+      "id": "legendary.ogerpon",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Ogerpon.mp3",
+      "imported": "Ogerpon.mp3",
+      "title": "Ogerpon"
+    },
+    {
+      "id": "legendary.paradox_future_trio",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Paradox_Future_Gen5_Legendaries.mp3",
+      "imported": "Paradox_Future_Gen5_Legendaries.mp3",
+      "title": "Paradox Future Gen5 Legendaries"
+    },
+    {
+      "id": "legendary.paradox_past_trio",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Paradox_Past_Gen3_Legendaries.mp3",
+      "imported": "Paradox_Past_Gen3_Legendaries.mp3",
+      "title": "Paradox Past Gen3 Legendaries"
+    },
+    {
+      "id": "legendary.paradox",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Paradox.mp3",
+      "imported": "Paradox.mp3",
+      "title": "Paradox"
+    },
+    {
+      "id": "legendary.pecharunt",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Pecharunt.mp3",
+      "imported": "Pecharunt.mp3",
+      "title": "Pecharunt"
+    },
+    {
+      "id": "legendary.raikou",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Raikou.mp3",
+      "imported": "Raikou.mp3",
+      "title": "Raikou"
+    },
+    {
+      "id": "legendary.remaining_gen3",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Remaining_Gen3_Legendaries.mp3",
+      "imported": "Remaining_Gen3_Legendaries.mp3",
+      "title": "Remaining Gen3 Legendaries"
+    },
+    {
+      "id": "legendary.remaining_gen4",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Remaining_Gen4_Legendaries.mp3",
+      "imported": "Remaining_Gen4_Legendaries.mp3",
+      "title": "Remaining Gen4 Legendaries"
+    },
+    {
+      "id": "legendary.remaining_gen5",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Remaining_Gen5_Legendaries.mp3",
+      "imported": "Remaining_Gen5_Legendaries.mp3",
+      "title": "Remaining Gen5 Legendaries"
+    },
+    {
+      "id": "legendary.suicune",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Suicune.mp3",
+      "imported": "Suicune.mp3",
+      "title": "Suicune"
+    },
+    {
+      "id": "legendary.tao_trio",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Tao_Trio.mp3",
+      "imported": "Tao_Trio.mp3",
+      "title": "Tao Trio"
+    },
+    {
+      "id": "legendary.tapu",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Tapu_Quartet.mp3",
+      "imported": "Tapu_Quartet.mp3",
+      "title": "Tapu Quartet"
+    },
+    {
+      "id": "legendary.terapagos",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Terapagos.mp3",
+      "imported": "Terapagos.mp3",
+      "title": "Terapagos"
+    },
+    {
+      "id": "legendary.treasures_of_ruin",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Treasures_Of_Ruin.mp3",
+      "imported": "Treasures_Of_Ruin.mp3",
+      "title": "Treasures Of Ruin"
+    },
+    {
+      "id": "legendary.ultra_beasts",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Ultra_Beasts.mp3",
+      "imported": "Ultra_Beasts.mp3",
+      "title": "Ultra Beasts"
+    },
+    {
+      "id": "legendary.victini",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Undertale Finale Dual Mix.mp3",
+      "imported": "Victini_Undertale.mp3",
+      "title": "Undertale Finale Dual Mix"
+    },
+    {
+      "id": "legendary.celebi",
+      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Aquatic.mp3",
+      "imported": "Celebi.mp3",
+      "title": "Celebi"
+    },
+    {
+      "id": "legendary.gen7_specials",
+      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Cyanide.mp3",
+      "imported": "Gen7_Specials.mp3",
+      "title": "Gen7 Specials"
+    },
+    {
+      "id": "legendary.gen8_specials",
+      "source": "C:\\Users\\Lenovo\\Documents\\Rejuvenation Battle Theme Pack V13.5\\rejuvenation v14 music port\\Audio\\BGM\\Battle- Popstar.mp3",
+      "imported": "Gen8_Specials.mp3",
+      "title": "Gen8 Specials"
+    },
+    {
+      "id": "legendary.galarian_birds",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Galarian_Legendary_Birds.mp3",
+      "imported": "Galarian_Legendary_Birds.mp3",
+      "title": "Galarian Legendary Birds"
+    },
+    {
+      "id": "legendary.victini_alternative",
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini.mp3",
+      "imported": "Victini_Alternative.mp3",
+      "title": "Victini Alternative"
+    },
+    {
+      "id": "trainer.kanto.gym",
+      "resource": "cobblemon:battle/gym_battle_johto",
+      "title": "Kanto Gym"
+    },
+    {
+      "id": "trainer.kanto.elite_four",
+      "resource": "cobblemon:battle/hgss/trainer_kanto",
+      "title": "Kanto Elite Four"
+    },
+    {
+      "id": "trainer.kanto.champion",
+      "resource": "cobblemon:battle/champion_battle",
+      "title": "Kanto Champion"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "gen1",
+      "species": [
+        "cobblemon:articuno",
+        "cobblemon:zapdos",
+        "cobblemon:moltres",
+        "cobblemon:mewtwo",
+        "cobblemon:mew"
+      ],
+      "sound": "battlemusic:legendary.gen1"
+    },
+    {
+      "id": "gen6",
+      "species": [
+        "cobblemon:xerneas",
+        "cobblemon:yveltal",
+        "cobblemon:zygarde",
+        "cobblemon:diancie",
+        "cobblemon:hoopa",
+        "cobblemon:volcanion"
+      ],
+      "sound": "battlemusic:legendary.gen6"
+    },
+    {
+      "id": "regi",
+      "species": [
+        "cobblemon:regirock",
+        "cobblemon:regice",
+        "cobblemon:registeel",
+        "cobblemon:regigigas",
+        "cobblemon:regieleki",
+        "cobblemon:regidrago"
+      ],
+      "sound": "battlemusic:legendary.regi"
+    },
+    {
+      "id": "weather_trio",
+      "species": [
+        "cobblemon:kyogre",
+        "cobblemon:groudon",
+        "cobblemon:rayquaza"
+      ],
+      "sound": "battlemusic:legendary.weather_trio"
+    },
+    {
+      "id": "arceus",
+      "species": [
+        "cobblemon:arceus"
+      ],
+      "sound": "battlemusic:legendary.arceus"
+    },
+    {
+      "id": "calyrex",
+      "species": [
+        "cobblemon:calyrex"
+      ],
+      "sound": "battlemusic:legendary.calyrex"
+    },
+    {
+      "id": "cosmog_family",
+      "species": [
+        "cobblemon:cosmog",
+        "cobblemon:cosmoem",
+        "cobblemon:lunala",
+        "cobblemon:solgaleo"
+      ],
+      "sound": "battlemusic:legendary.cosmog_family"
+    },
+    {
+      "id": "deoxys",
+      "species": [
+        "cobblemon:deoxys"
+      ],
+      "sound": "battlemusic:legendary.deoxys"
+    },
+    {
+      "id": "dialga_palkia",
+      "species": [
+        "cobblemon:dialga",
+        "cobblemon:palkia"
+      ],
+      "sound": "battlemusic:legendary.dialga_palkia"
+    },
+    {
+      "id": "entei",
+      "species": [
+        "cobblemon:entei"
+      ],
+      "sound": "battlemusic:legendary.entei"
+    },
+    {
+      "id": "eternatus",
+      "species": [
+        "cobblemon:eternatus"
+      ],
+      "sound": "battlemusic:legendary.eternatus"
+    },
+    {
+      "id": "galar_dogs",
+      "species": [
+        "cobblemon:zacian",
+        "cobblemon:zamazenta"
+      ],
+      "sound": "battlemusic:legendary.galar_dogs"
+    },
+    {
+      "id": "galar_horses",
+      "species": [
+        "cobblemon:glastrier",
+        "cobblemon:spectrier"
+      ],
+      "sound": "battlemusic:legendary.galar_horses"
+    },
+    {
+      "id": "giratina",
+      "species": [
+        "cobblemon:giratina"
+      ],
+      "sound": "battlemusic:legendary.giratina"
+    },
+    {
+      "id": "ho_oh",
+      "species": [
+        "cobblemon:hooh"
+      ],
+      "sound": "battlemusic:legendary.ho_oh"
+    },
+    {
+      "id": "lake_guardians",
+      "species": [
+        "cobblemon:uxie",
+        "cobblemon:mesprit",
+        "cobblemon:azelf"
+      ],
+      "sound": "battlemusic:legendary.lake_guardians"
+    },
+    {
+      "id": "loyal_three",
+      "species": [
+        "cobblemon:okidogi",
+        "cobblemon:munkidori",
+        "cobblemon:fezandipiti"
+      ],
+      "sound": "battlemusic:legendary.loyal_three"
+    },
+    {
+      "id": "lugia",
+      "species": [
+        "cobblemon:lugia"
+      ],
+      "sound": "battlemusic:legendary.lugia"
+    },
+    {
+      "id": "miraidon_koraidon",
+      "species": [
+        "cobblemon:miraidon",
+        "cobblemon:koraidon"
+      ],
+      "sound": "battlemusic:legendary.miraidon_koraidon"
+    },
+    {
+      "id": "necrozma",
+      "species": [
+        "cobblemon:necrozma"
+      ],
+      "sound": "battlemusic:legendary.necrozma"
+    },
+    {
+      "id": "ogerpon",
+      "species": [
+        "cobblemon:ogerpon"
+      ],
+      "sound": "battlemusic:legendary.ogerpon"
+    },
+    {
+      "id": "paradox_future_trio",
+      "species": [
+        "cobblemon:ironleaves",
+        "cobblemon:ironcrown",
+        "cobblemon:ironboulder"
+      ],
+      "sound": "battlemusic:legendary.paradox_future_trio"
+    },
+    {
+      "id": "paradox_past_trio",
+      "species": [
+        "cobblemon:walkingwake",
+        "cobblemon:ragingbolt",
+        "cobblemon:gougingfire"
+      ],
+      "sound": "battlemusic:legendary.paradox_past_trio"
+    },
+    {
+      "id": "paradox",
+      "species": [
+        "cobblemon:greattusk",
+        "cobblemon:screamtail",
+        "cobblemon:brutebonnet",
+        "cobblemon:fluttermane",
+        "cobblemon:slitherwing",
+        "cobblemon:sandyshocks",
+        "cobblemon:roaringmoon",
+        "cobblemon:irontreads",
+        "cobblemon:ironbundle",
+        "cobblemon:ironhands",
+        "cobblemon:ironjugulis",
+        "cobblemon:ironmoth",
+        "cobblemon:ironthorns",
+        "cobblemon:ironvaliant"
+      ],
+      "sound": "battlemusic:legendary.paradox"
+    },
+    {
+      "id": "pecharunt",
+      "species": [
+        "cobblemon:pecharunt"
+      ],
+      "sound": "battlemusic:legendary.pecharunt"
+    },
+    {
+      "id": "raikou",
+      "species": [
+        "cobblemon:raikou"
+      ],
+      "sound": "battlemusic:legendary.raikou"
+    },
+    {
+      "id": "remaining_gen3",
+      "species": [
+        "cobblemon:latias",
+        "cobblemon:latios",
+        "cobblemon:jirachi"
+      ],
+      "sound": "battlemusic:legendary.remaining_gen3"
+    },
+    {
+      "id": "remaining_gen4",
+      "species": [
+        "cobblemon:heatran",
+        "cobblemon:cresselia",
+        "cobblemon:darkrai",
+        "cobblemon:phione",
+        "cobblemon:manaphy",
+        "cobblemon:shaymin"
+      ],
+      "sound": "battlemusic:legendary.remaining_gen4"
+    },
+    {
+      "id": "remaining_gen5",
+      "species": [
+        "cobblemon:cobalion",
+        "cobblemon:terrakion",
+        "cobblemon:virizion",
+        "cobblemon:tornadus",
+        "cobblemon:thundurus",
+        "cobblemon:landorus",
+        "cobblemon:keldeo",
+        "cobblemon:meloetta",
+        "cobblemon:genesect",
+        "cobblemon:enamorus"
+      ],
+      "sound": "battlemusic:legendary.remaining_gen5"
+    },
+    {
+      "id": "suicune",
+      "species": [
+        "cobblemon:suicune"
+      ],
+      "sound": "battlemusic:legendary.suicune"
+    },
+    {
+      "id": "tao_trio",
+      "species": [
+        "cobblemon:reshiram",
+        "cobblemon:zekrom",
+        "cobblemon:kyurem"
+      ],
+      "sound": "battlemusic:legendary.tao_trio"
+    },
+    {
+      "id": "tapu",
+      "species": [
+        "cobblemon:tapukoko",
+        "cobblemon:tapulele",
+        "cobblemon:tapubulu",
+        "cobblemon:tapufini"
+      ],
+      "sound": "battlemusic:legendary.tapu"
+    },
+    {
+      "id": "terapagos",
+      "species": [
+        "cobblemon:terapagos"
+      ],
+      "sound": "battlemusic:legendary.terapagos"
+    },
+    {
+      "id": "treasures_of_ruin",
+      "species": [
+        "cobblemon:wochien",
+        "cobblemon:chienpao",
+        "cobblemon:tinglu",
+        "cobblemon:chiyu"
+      ],
+      "sound": "battlemusic:legendary.treasures_of_ruin"
+    },
+    {
+      "id": "ultra_beasts",
+      "species": [
+        "cobblemon:nihilego",
+        "cobblemon:buzzwole",
+        "cobblemon:pheromosa",
+        "cobblemon:xurkitree",
+        "cobblemon:celesteela",
+        "cobblemon:kartana",
+        "cobblemon:guzzlord",
+        "cobblemon:poipole",
+        "cobblemon:naganadel",
+        "cobblemon:stakataka",
+        "cobblemon:blacephalon"
+      ],
+      "sound": "battlemusic:legendary.ultra_beasts"
+    },
+    {
+      "id": "victini",
+      "species": [
+        "cobblemon:victini"
+      ],
+      "sound": "battlemusic:legendary.victini"
+    },
+    {
+      "id": "celebi",
+      "species": [
+        "cobblemon:celebi"
+      ],
+      "sound": "battlemusic:legendary.celebi"
+    },
+    {
+      "id": "gen7_specials",
+      "species": [
+        "cobblemon:typenull",
+        "cobblemon:silvally",
+        "cobblemon:magearna",
+        "cobblemon:marshadow",
+        "cobblemon:zeraora",
+        "cobblemon:meltan",
+        "cobblemon:melmetal"
+      ],
+      "sound": "battlemusic:legendary.gen7_specials"
+    },
+    {
+      "id": "gen8_specials",
+      "species": [
+        "cobblemon:kubfu",
+        "cobblemon:urshifu",
+        "cobblemon:zarude"
+      ],
+      "sound": "battlemusic:legendary.gen8_specials"
+    },
+    {
+      "id": "galarian_birds",
+      "species": [
+        "cobblemon:articuno",
+        "cobblemon:zapdos",
+        "cobblemon:moltres"
+      ],
+      "aspects": [
+        "galarian"
+      ],
+      "sound": "battlemusic:legendary.galarian_birds",
+      "priority": 300
+    }
+  ]
+}

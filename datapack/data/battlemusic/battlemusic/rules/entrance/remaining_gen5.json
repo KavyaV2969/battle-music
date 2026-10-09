@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:cobalion",
+      "cobblemon:terrakion",
+      "cobblemon:virizion",
+      "cobblemon:tornadus",
+      "cobblemon:thundurus",
+      "cobblemon:landorus",
+      "cobblemon:keldeo",
+      "cobblemon:meloetta",
+      "cobblemon:genesect",
+      "cobblemon:enamorus"
+    ]
+  },
+  "sound": "battlemusic:legendary.remaining_gen5",
+  "transition_ticks": 30
+}

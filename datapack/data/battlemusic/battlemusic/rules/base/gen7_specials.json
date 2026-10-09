@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:typenull",
+      "cobblemon:silvally",
+      "cobblemon:magearna",
+      "cobblemon:marshadow",
+      "cobblemon:zeraora",
+      "cobblemon:meltan",
+      "cobblemon:melmetal"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen7_specials",
+  "transition_ticks": 30
+}

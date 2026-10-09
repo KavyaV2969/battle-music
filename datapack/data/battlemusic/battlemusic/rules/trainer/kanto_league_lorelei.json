@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 300,
+  "match": {
+    "battle_type": "trainer",
+    "trainers": [
+      "rctmod:kanto_league_lorelei"
+    ]
+  },
+  "sound": "battlemusic:trainer.kanto.elite_four",
+  "transition_ticks": 30
+}

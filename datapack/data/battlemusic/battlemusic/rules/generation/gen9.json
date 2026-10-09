@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 100,
+  "match": {
+    "battle_type": "wild",
+    "labels": [
+      "gen9"
+    ]
+  },
+  "sound": "battlemusic:wild.gen9",
+  "transition_ticks": 30
+}

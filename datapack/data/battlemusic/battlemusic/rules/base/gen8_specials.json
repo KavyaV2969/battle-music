@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:kubfu",
+      "cobblemon:urshifu",
+      "cobblemon:zarude"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen8_specials",
+  "transition_ticks": 30
+}

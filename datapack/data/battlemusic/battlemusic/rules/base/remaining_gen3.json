@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:latias",
+      "cobblemon:latios",
+      "cobblemon:jirachi"
+    ]
+  },
+  "sound": "battlemusic:legendary.remaining_gen3",
+  "transition_ticks": 30
+}

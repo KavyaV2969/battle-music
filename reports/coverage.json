@@ -1,0 +1,1707 @@
+{
+  "success": true,
+  "sound_events": 53,
+  "rules": 102,
+  "validated_examples": 6,
+  "verified_trainer_assignments": 13,
+  "unknown_trainers": [],
+  "species_definitions": 1067,
+  "special_definitions": 282,
+  "unique_special_species": 125,
+  "uncovered": [],
+  "unknown_assignments": [],
+  "coverage": [
+    {
+      "species": "cobblemon:articuno",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:articuno",
+      "form": "Galar",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:mew",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:mewtwo",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:mewtwo",
+      "form": "Mega-X",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:mewtwo",
+      "form": "Mega-Y",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:moltres",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:moltres",
+      "form": "Galar",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zapdos",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zapdos",
+      "form": "Galar",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:celebi",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:entei",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:hooh",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:lugia",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:raikou",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:suicune",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:deoxys",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:deoxys",
+      "form": "Attack",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:deoxys",
+      "form": "Defense",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:deoxys",
+      "form": "Speed",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:groudon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:groudon",
+      "form": "Primal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:jirachi",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyogre",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyogre",
+      "form": "Primal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:latias",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:latias",
+      "form": "Mega",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:latios",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:latios",
+      "form": "Mega",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Mega",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:regice",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:regirock",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:registeel",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Fighting",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Flying",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Poison",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Ground",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Rock",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Bug",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Ghost",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Steel",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Fire",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Water",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Grass",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Electric",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Psychic",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Ice",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Dragon",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Dark",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:arceus",
+      "form": "Fairy",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:azelf",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:cresselia",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:darkrai",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:dialga",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:dialga",
+      "form": "Origin",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:giratina",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:giratina",
+      "form": "Origin",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:heatran",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:manaphy",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:mesprit",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:palkia",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:palkia",
+      "form": "Origin",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:phione",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:regigigas",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:shaymin",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:shaymin",
+      "form": "Sky",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:uxie",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:cobalion",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:genesect",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:genesect",
+      "form": "Douse",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:genesect",
+      "form": "Shock",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:genesect",
+      "form": "Burn",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:genesect",
+      "form": "Chill",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:keldeo",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:keldeo",
+      "form": "Resolute",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "White",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Black",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:landorus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:landorus",
+      "form": "Therian",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:meloetta",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:meloetta",
+      "form": "Pirouette",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:reshiram",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terrakion",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:thundurus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:thundurus",
+      "form": "Therian",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tornadus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tornadus",
+      "form": "Therian",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:victini",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:virizion",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zekrom",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:diancie",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:diancie",
+      "form": "Mega",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:hoopa",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:hoopa",
+      "form": "Unbound",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:volcanion",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:xerneas",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:xerneas",
+      "form": "Active",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:yveltal",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%-C",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "50%-C",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Complete",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:blacephalon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:buzzwole",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:celesteela",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:cosmoem",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:cosmog",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:guzzlord",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kartana",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:lunala",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:magearna",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:magearna",
+      "form": "Original",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:marshadow",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:naganadel",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dusk-Mane",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dawn-Wings",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Ultra",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:nihilego",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:pheromosa",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:poipole",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Fighting",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Flying",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Poison",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Ground",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Rock",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Bug",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Ghost",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Steel",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Fire",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Water",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Grass",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Electric",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Psychic",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Ice",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Dragon",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Dark",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:silvally",
+      "form": "Fairy",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:solgaleo",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:stakataka",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tapubulu",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tapufini",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tapukoko",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tapulele",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:typenull",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:xurkitree",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zeraora",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:melmetal",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:melmetal",
+      "form": "Gmax",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:meltan",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Ice",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Shadow",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Eternamax",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:glastrier",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kubfu",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:regidrago",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:regieleki",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:spectrier",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:urshifu",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:urshifu",
+      "form": "Rapid-Strike",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:urshifu",
+      "form": "Gmax",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:urshifu",
+      "form": "Rapid-Strike-Gmax",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zacian",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zacian",
+      "form": "Crowned",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zamazenta",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zamazenta",
+      "form": "Crowned",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zarude",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zarude",
+      "form": "Dada",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:enamorus",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:enamorus",
+      "form": "Therian",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:brutebonnet",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:chienpao",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:chiyu",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:fezandipiti",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:fluttermane",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:gougingfire",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:greattusk",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironboulder",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironbundle",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironcrown",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironhands",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironjugulis",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironleaves",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironmoth",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironthorns",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:irontreads",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ironvaliant",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:koraidon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:miraidon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:munkidori",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Wellspring",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Hearthflame",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Cornerstone",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Teal-Tera",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Wellspring-Tera",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Hearthflame-Tera",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ogerpon",
+      "form": "Cornerstone-Tera",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:okidogi",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:pecharunt",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:ragingbolt",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:roaringmoon",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:sandyshocks",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:screamtail",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:slitherwing",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Terastal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Stellar",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tinglu",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:walkingwake",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:wochien",
+      "form": "Normal",
+      "source": "Cobblemon-fabric-1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Mega",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "White",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Black",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:landorus",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:landorus",
+      "form": "Therian",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:thundurus",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:thundurus",
+      "form": "Therian",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tornadus",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:tornadus",
+      "form": "Therian",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:hoopa",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:hoopa",
+      "form": "Unbound",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%-C",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "50%-C",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Complete",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Core",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dusk-Mane",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dawn-Wings",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Ultra",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Ice",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:calyrex",
+      "form": "Shadow",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Eternamax",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kubfu",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zacian",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zacian",
+      "form": "Crowned",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zamazenta",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zamazenta",
+      "form": "Crowned",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:enamorus",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:enamorus",
+      "form": "Therian",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Normal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Terastal",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Stellar",
+      "source": "mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:articuno",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:articuno",
+      "form": "Galar",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:moltres",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:moltres",
+      "form": "Galar",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zapdos",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zapdos",
+      "form": "Galar",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:rayquaza",
+      "form": "Mega",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "White",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:kyurem",
+      "form": "Black",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "10%-C",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "50%-C",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Complete",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:zygarde",
+      "form": "Core",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dusk-Mane",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Dawn-Wings",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:necrozma",
+      "form": "Ultra",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:eternatus",
+      "form": "Eternamax",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Normal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Terastal",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    },
+    {
+      "species": "cobblemon:terapagos",
+      "form": "Stellar",
+      "source": "COBBLEVERSE-DP-v31.zip",
+      "covered": true
+    }
+  ]
+}

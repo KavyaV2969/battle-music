@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:xerneas",
+      "cobblemon:yveltal",
+      "cobblemon:zygarde",
+      "cobblemon:diancie",
+      "cobblemon:hoopa",
+      "cobblemon:volcanion"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen6",
+  "transition_ticks": 30
+}

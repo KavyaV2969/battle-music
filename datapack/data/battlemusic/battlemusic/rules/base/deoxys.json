@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:deoxys"
+    ]
+  },
+  "sound": "battlemusic:legendary.deoxys",
+  "transition_ticks": 30
+}

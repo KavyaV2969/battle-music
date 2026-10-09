@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 300,
+  "match": {
+    "battle_type": "trainer",
+    "trainers": [
+      "rctmod:kanto_giovanni"
+    ]
+  },
+  "sound": "battlemusic:trainer.kanto.gym",
+  "transition_ticks": 30
+}

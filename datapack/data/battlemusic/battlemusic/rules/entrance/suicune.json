@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:suicune"
+    ]
+  },
+  "sound": "battlemusic:legendary.suicune",
+  "transition_ticks": 30
+}

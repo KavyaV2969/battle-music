@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:giratina"
+    ]
+  },
+  "sound": "battlemusic:legendary.giratina",
+  "transition_ticks": 30
+}

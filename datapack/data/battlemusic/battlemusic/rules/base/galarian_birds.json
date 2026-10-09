@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 300,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:articuno",
+      "cobblemon:zapdos",
+      "cobblemon:moltres"
+    ],
+    "aspects": [
+      "galarian"
+    ]
+  },
+  "sound": "battlemusic:legendary.galarian_birds",
+  "transition_ticks": 30
+}

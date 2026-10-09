@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:pecharunt"
+    ]
+  },
+  "sound": "battlemusic:legendary.pecharunt",
+  "transition_ticks": 30
+}

@@ -1,0 +1,1 @@
+{"schema_version":1,"kind":"base","priority":500,"match":{"battle_type":"wild","species":["cobblemon:rattata"],"aspects":["alolan"]},"sound":"battlemusic:wild.gen7","transition_ticks":30}

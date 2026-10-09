@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:cosmog",
+      "cobblemon:cosmoem",
+      "cobblemon:lunala",
+      "cobblemon:solgaleo"
+    ]
+  },
+  "sound": "battlemusic:legendary.cosmog_family",
+  "transition_ticks": 30
+}

@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "game_directory": "C:\\Users\\Lenovo\\AppData\\Roaming\\ModrinthApp\\profiles\\COBBLEVERSE - Pokemon Adventure [Cobblemon]\\battle-music\\integration\\game",
+  "anonymous_identity": true,
+  "source_region_and_playerdata_directories_copied": false,
+  "source_level_dat_copied": true,
+  "jar_sha256": "055150230c23e3469e9a87403b80063abf9e46eef48c12caa093881567be685e",
+  "phase": 11,
+  "checks": [
+    "Real wild Rattata battle selects Gen 1; own Mew does not interrupt",
+    "Battle end releases channels and restores background playback",
+    "Real wild Arceus battle selects its special base without duplicate entrance playback",
+    "Battle end releases channels and restores background playback",
+    "Real RCT Brock battle selects Kanto gym audio through native server/client packets",
+    "Actual trainer switch to Arceus crossfades and pauses the original OpenAL channel",
+    "Paused base stream offset remains fixed while entrance music plays",
+    "Opponent switch-out audibly resumes the original source and decoder",
+    "Repeated opponent entry restarts entrance voice while retaining trainer source",
+    "Arceus faint audibly resumes the same base sound, OpenAL source and decoder stream",
+    "Twelve rapid entrance changes settle on the same retained base with no leaked voices",
+    "Stale payload ignored",
+    "Missing entrance audio retains original base",
+    "Battle end releases channels and restores background playback"
+  ],
+  "measurements": {
+    "pausedSourceOffsetSeconds": 0.06912719,
+    "resumedQueueOffsetSeconds": 0.4874444,
+    "sameOpenALSourceAndDecoder": true
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 170.3,
+  "terminated_by_harness": true
+}

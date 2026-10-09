@@ -1,0 +1,14 @@
+{
+  "profile": "C:\\Users\\Lenovo\\AppData\\Roaming\\ModrinthApp\\profiles\\COBBLEVERSE - Pokemon Adventure [Cobblemon]",
+  "world": "New World",
+  "changed": [
+    "mods\\battlemusic-0.1.0.jar",
+    "resourcepacks\\battlemusic-audio-0.1.0.zip",
+    "saves\\New World\\datapacks\\battlemusic-defaults-0.1.0.zip",
+    "options.txt",
+    "config\\sound_physics_remastered\\sound_rates.properties"
+  ],
+  "backup": "C:\\Users\\Lenovo\\AppData\\Roaming\\ModrinthApp\\profiles\\COBBLEVERSE - Pokemon Adventure [Cobblemon]\\battle-music-backups\\20261010-020041",
+  "jar_sha256": "055150230c23e3469e9a87403b80063abf9e46eef48c12caa093881567be685e",
+  "music_volume": 0.65
+}

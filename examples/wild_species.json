@@ -1,0 +1,1 @@
+{"schema_version":1,"kind":"base","priority":500,"match":{"battle_type":"wild","species":["cobblemon:pikachu"]},"sound":"battlemusic:legendary.victini_alternative","transition_ticks":30}

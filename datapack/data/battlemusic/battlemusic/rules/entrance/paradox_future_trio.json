@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:ironleaves",
+      "cobblemon:ironcrown",
+      "cobblemon:ironboulder"
+    ]
+  },
+  "sound": "battlemusic:legendary.paradox_future_trio",
+  "transition_ticks": 30
+}

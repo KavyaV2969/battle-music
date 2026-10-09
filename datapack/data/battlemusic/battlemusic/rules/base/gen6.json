@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:xerneas",
+      "cobblemon:yveltal",
+      "cobblemon:zygarde",
+      "cobblemon:diancie",
+      "cobblemon:hoopa",
+      "cobblemon:volcanion"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen6",
+  "transition_ticks": 30
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:typenull",
+      "cobblemon:silvally",
+      "cobblemon:magearna",
+      "cobblemon:marshadow",
+      "cobblemon:zeraora",
+      "cobblemon:meltan",
+      "cobblemon:melmetal"
+    ]
+  },
+  "sound": "battlemusic:legendary.gen7_specials",
+  "transition_ticks": 30
+}

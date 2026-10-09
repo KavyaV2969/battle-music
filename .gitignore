@@ -1,0 +1,12 @@
+/audio-src/
+/build/
+/dist/
+/.tools/
+/integration/game/
+/integration/server/
+/integration/*.jar
+/.gradle/
+__pycache__/
+*.log
+local.properties
+/reports/live-process.json

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "base",
+  "priority": 200,
+  "match": {
+    "battle_type": "wild",
+    "species": [
+      "cobblemon:tapukoko",
+      "cobblemon:tapulele",
+      "cobblemon:tapubulu",
+      "cobblemon:tapufini"
+    ]
+  },
+  "sound": "battlemusic:legendary.tapu",
+  "transition_ticks": 30
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "entrance",
+  "priority": 200,
+  "match": {
+    "species": [
+      "cobblemon:deoxys"
+    ]
+  },
+  "sound": "battlemusic:legendary.deoxys",
+  "transition_ticks": 30
+}
