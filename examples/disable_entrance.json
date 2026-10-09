@@ -1,1 +1,1 @@
-{"schema_version":1,"kind":"entrance","priority":500,"match":{"species":["cobblemon:arceus"]},"sound":null,"transition_ticks":30}
+{"schema_version":1,"kind":"entrance","priority":500,"match":{"species":["cobblemon:arceus"]},"sound":null,"transition_ticks":4}

@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.battlemusic.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["PlayerActorMixin", "BattleTickMixin"],
-  "client": ["MusicHandlerMixin", "MusicManagerMixin", "SoundManagerAccessor", "SoundSystemAccessor", "SoundFilterMixin"],
+  "mixins": ["PlayerActorMixin", "BattleTickMixin", "SwitchMusicMixin", "InitialMusicMixin"],
+  "client": ["MusicHandlerMixin", "MusicManagerMixin", "SoundManagerAccessor", "SoundSystemAccessor", "SoundFilterMixin", "BackgroundResumeMixin", "BackgroundEngineMixin", "RetainedChannelMixin"],
   "injectors": {"defaultRequire": 1}
 }

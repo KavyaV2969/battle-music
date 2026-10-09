@@ -44,6 +44,10 @@ public final class Verification {
         }
         var envelope=new Envelope(1);envelope.to(0,30);for(int i=0;i<15;i++)envelope.tick();check(Math.abs(envelope.value()-.5)<.001,"smooth midpoint");float before=envelope.value();envelope.to(1,30);check(envelope.value()==before,"retarget keeps current gain");for(int i=0;i<30;i++)envelope.tick();check(envelope.settled()&&envelope.value()==1,"fade completes");
         var state=new MusicState(1,UUID.randomUUID(),3,"battlemusic:wild.gen1","cobblemon:battle.pvw.default",1,1,"battlemusic:legendary.arceus",UUID.randomUUID(),30,false);
+        envelope.to(0,30);envelope.tick();envelope.snap(1);
+        check(envelope.value()==1&&envelope.settled(),"leading theme bypasses fade at full gain");
+        var immediate=Rule.parse("test:default",JsonParser.parseString("{\"schema_version\":1,\"kind\":\"entrance\",\"sound\":null,\"match\":{}}").getAsJsonObject());
+        check(immediate.transitionTicks()==4,"default switch transition is 200 ms");
         check(MusicState.parse(state.json()).equals(state),"payload roundtrip");
         var trainerState=new MusicState(1,state.battle(),4,state.base(),state.fallback(),1,1,state.entrance(),state.pokemon(),30,false,true);
         check(MusicState.parse(trainerState.json()).trainerBattle(),"trainer context survives networking");
@@ -71,8 +75,14 @@ public final class Verification {
         check(!dev.battlemusic.server.RaidGuard.excluded(new Object()),"raid integration optional without raid mod");
         abi(root,"Cobblemon-fabric-1.7.3+1.21.1.jar","com/cobblemon/mod/common/battles/actor/PlayerBattleActor","sendUpdate","(Lcom/cobblemon/mod/common/api/net/NetworkPacket;)V");
         abi(root,"Cobblemon-fabric-1.7.3+1.21.1.jar","com/cobblemon/mod/common/api/battles/model/PokemonBattle","tick","()V");
+        abi(root,"Cobblemon-fabric-1.7.3+1.21.1.jar","com/cobblemon/mod/common/battles/interpreter/instructions/InitializeInstruction","invoke","(Lcom/cobblemon/mod/common/api/battles/model/PokemonBattle;)V");
+        abi(root,"Cobblemon-fabric-1.7.3+1.21.1.jar","com/cobblemon/mod/common/battles/interpreter/instructions/SwitchInstruction$Companion","createEntitySwitch","(Lcom/cobblemon/mod/common/api/battles/model/PokemonBattle;Lcom/cobblemon/mod/common/api/battles/model/actor/BattleActor;Lnet/minecraft/class_1309;Ljava/lang/String;Lcom/cobblemon/mod/common/battles/ActiveBattlePokemon;Lcom/cobblemon/mod/common/battles/pokemon/BattlePokemon;Lcom/cobblemon/mod/common/battles/pokemon/BattlePokemon;Z)Lcom/cobblemon/mod/common/battles/dispatch/DispatchResult;");
+        abi(root,"Cobblemon-fabric-1.7.3+1.21.1.jar","com/cobblemon/mod/common/util/SoundExtensionsKt","resumeSounds","(Lnet/minecraft/class_1144;Lnet/minecraft/class_2960;Lnet/minecraft/class_3419;)V");
         abi(root,"client-intermediary.jar","net/minecraft/class_1142","method_18669","()V");
         abi(root,"client-intermediary.jar","net/minecraft/class_1144","method_4873","(Lnet/minecraft/class_1113;)V");
+        abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_4854","(Lnet/minecraft/class_1113;)V");
+        abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_19762","()V");
+        abi(root,"client-intermediary.jar","net/minecraft/class_4235","method_19723","(Lnet/minecraft/class_4225$class_4105;)Ljava/util/concurrent/CompletableFuture;");
         Files.createDirectories(root.resolve("reports"));Files.writeString(root.resolve("reports/unit-tests.json"),"{\"success\":true,\"checks\":"+checks+"}\n");
         System.out.println("PASS: "+checks+" rule, envelope, protocol and installed ABI checks");
     }

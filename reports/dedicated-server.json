@@ -3,5 +3,5 @@
   "mode": "Fabric dedicated server --initSettings; no world started, port opened, or EULA accepted",
   "client_classes_loaded": false,
   "exit_code": 0,
-  "jar_sha256": "b5a627dbf8998b635db09df35c867e58ad397f485212526ff20d2c6c0864518a"
+  "jar_sha256": "feef537a8fe1568156bfb08ca864bdb2d0e3a414d224c87cca59115f8572724f"
 }

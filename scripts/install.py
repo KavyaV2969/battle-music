@@ -12,13 +12,17 @@ def install(profile, world, music_volume=None):
         raise SystemExit('Choose an existing world inside the target profile saves directory.')
     # Avoid launcher argument output: inspect only whether a Minecraft JVM is running.
     check=subprocess.run(['powershell','-NoProfile','-Command',
-        "@(Get-CimInstance Win32_Process -Filter \"Name='java.exe' OR Name='javaw.exe'\" | Where-Object { $_.CommandLine -match 'minecraft|fabricmc|KnotClient|KnotServer' }).Count"],capture_output=True,text=True,check=True)
+        "@(Get-CimInstance Win32_Process -Filter \"Name='java.exe' OR Name='javaw.exe'\" -ErrorAction Stop | Where-Object { $_.CommandLine -match 'minecraft|fabricmc|KnotClient|KnotServer' }).Count"],capture_output=True,text=True,check=True)
     if int(check.stdout.strip() or '0'):
         raise SystemExit('Close Minecraft before installation; running games can overwrite settings or hold JAR files open.')
     receipt=json.loads((ROOT/'reports/live-client.json').read_text())
     jar=ROOT/f'dist/battlemusic-{VERSION}.jar'
     if not receipt.get('success') or receipt.get('jar_sha256')!=hashlib.sha256(jar.read_bytes()).hexdigest():
         raise SystemExit('Run successful isolated live verification for this exact JAR before installing.')
+    for kind in ('audio','defaults'):
+        artifact=ROOT/f'dist/battlemusic-{kind}-{VERSION}.zip'
+        if receipt.get(kind+'_sha256')!=hashlib.sha256(artifact.read_bytes()).hexdigest():
+            raise SystemExit(f'Run isolated live verification for this exact {kind} pack before installing.')
     backup=profile/'battle-music-backups'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
     changed=[]
     def write(dest, data):

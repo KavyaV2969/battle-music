@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.battlemusic.fixture.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["CueMixin", "PacketCueMixin"],
+  "injectors": {"defaultRequire": 1}
+}

@@ -65,7 +65,7 @@ def generate():
     for old in rules.rglob('*.json'): old.unlink()
     def write(name,kind,match,sound,priority):
         path=rules/(name+'.json'); path.parent.mkdir(parents=True,exist_ok=True)
-        path.write_text(json.dumps(dict(schema_version=1,kind=kind,priority=priority,match=match,sound=sound,transition_ticks=30),indent=2)+'\n')
+        path.write_text(json.dumps(dict(schema_version=1,kind=kind,priority=priority,match=match,sound=sound,transition_ticks=4),indent=2)+'\n')
     for gen in range(1,10): write(f'generation/gen{gen}','base',dict(battle_type='wild',labels=[f'gen{gen}']),f'battlemusic:wild.gen{gen}',100)
     for assignment in data['assignments']:
         match={key:assignment[key] for key in ('species','aspects') if key in assignment}

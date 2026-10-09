@@ -76,6 +76,8 @@ def live():
     reports=ROOT/'reports';reports.mkdir(exist_ok=True)
     logfile=reports/'live-client.log'
     receipt={'success':False,'game_directory':str(GAME),'anonymous_identity':True,'source_region_and_playerdata_directories_copied':False,'source_level_dat_copied':True,'jar_sha256':hashlib.sha256((ROOT/f'dist/battlemusic-{VERSION}.jar').read_bytes()).hexdigest()}
+    receipt['audio_sha256']=hashlib.sha256((ROOT/f'dist/battlemusic-audio-{VERSION}.zip').read_bytes()).hexdigest()
+    receipt['defaults_sha256']=hashlib.sha256((ROOT/f'dist/battlemusic-defaults-{VERSION}.zip').read_bytes()).hexdigest()
     started=time.monotonic()
     with logfile.open('w',encoding='utf-8') as stream:
         proc=subprocess.Popen(args,cwd=GAME,stdout=stream,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW)

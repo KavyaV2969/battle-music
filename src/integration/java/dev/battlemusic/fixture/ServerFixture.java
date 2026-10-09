@@ -21,7 +21,7 @@ import java.util.*;
 public final class ServerFixture implements ModInitializer {
     private PokemonBattle battle;private PokemonEntity wild;private class_1309 trainerEntity;
     private UUID geodude,arceus;
-    private int phase,ticks,ready,switches,eliteMember;private boolean finished;
+    private int phase=-1,ticks,ready,switches,eliteMember;private boolean finished;
     @Override public void onInitialize(){
         if(!Path.of("").toAbsolutePath().normalize().endsWith(Path.of("battle-music/integration/game")))throw new IllegalStateException("Fixture refuses to run outside its isolated game directory");
         ServerTickEvents.END_SERVER_TICK.register(server->{if(finished)return;try{
@@ -30,7 +30,8 @@ public final class ServerFixture implements ModInitializer {
             if(Shared.error!=null)throw new IllegalStateException(Shared.error);
             var player=server.method_3760().method_14571().getFirst();
             switch(phase){
-                case 0 -> {startWild(player,"rattata");Shared.request("wild");phase++;}
+                case -1 -> {Shared.request("background");phase++;}
+                case 0 -> {if(done()){startWild(player,"rattata");Shared.request("wild");phase++;}}
                 case 1 -> {if(done()){stop();Shared.request("ended");phase++;}}
                 case 2 -> {if(done()){startWild(player,"arceus");Shared.request("special");phase++;}}
                 case 3 -> {if(done()){stop();Shared.request("ended");phase++;}}
@@ -39,13 +40,18 @@ public final class ServerFixture implements ModInitializer {
                 case 6 -> {if(done()){if(!Shared.expect.equals("pause-retained"))Shared.request("pause-retained");else{Shared.request("toggle-off");phase++;}}}
                 case 7 -> {if(done()){
                     if(switches==0&&act("splash",Integer.valueOf(0))){Shared.request("switch-resumed");switches++;}
-                    else if(switches==1&&act("splash",true)){Shared.request("reentered");switches++;}
+                    else if(switches==1){
+                        if(!Shared.expect.equals("entrance-pause-retained"))Shared.request("entrance-pause-retained");
+                        else if(act("splash",true)){Shared.request("reentered");switches++;}
+                    }
                     else if(switches==2&&act("seismictoss",false)){Shared.request("resumed");phase++;}
                 }}
                 case 8 -> {if(done()){if(!Shared.expect.equals("rapid"))Shared.request("rapid");else{Shared.request("stale");phase++;}}}
                 case 9 -> {if(done()){Shared.request("missing");phase++;}}
                 case 10 -> {if(done()){stop();Shared.request("ended");phase++;}}
-                case 11 -> {if(done()){startTrainer(player,"kanto_champion_blue",true);Shared.request("champion");phase++;}}
+                case 11 -> {if(done()){startTrainer(player,"kanto_brock",true);Shared.request("leading");phase=15;}}
+                case 15 -> {if(done()){stop();Shared.request("ended");phase=16;}}
+                case 16 -> {if(done()){startTrainer(player,"kanto_champion_blue",true);Shared.request("champion");phase=12;}}
                 case 12 -> {
                     Shared.championArceusActive=false;
                     for(var actor:battle.getActors())if(!(actor instanceof PlayerBattleActor))for(var active:actor.getSide().getActivePokemon()){

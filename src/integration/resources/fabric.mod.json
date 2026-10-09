@@ -2,5 +2,6 @@
   "schemaVersion": 1, "id": "battlemusic_verification", "version": "0.1.0", "environment": "*",
   "name": "Isolated Battle Music Verification",
   "entrypoints": {"main": ["dev.battlemusic.fixture.ServerFixture"], "client": ["dev.battlemusic.fixture.ClientFixture"]},
+  "mixins": ["battlemusic-fixture.mixins.json"],
   "depends": {"battlemusic": "*", "rctapi": "*", "fabric-api": "*"}
 }

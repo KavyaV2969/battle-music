@@ -30,7 +30,7 @@ public record Rule(String id, String kind, int priority, Match match, String sou
             String kind=string(obj,"kind",null); if(!Set.of("base","entrance").contains(kind))throw new IllegalArgumentException("kind must be base or entrance");
             if(!obj.has("sound"))throw new IllegalArgumentException("sound is required (null is allowed)");
             String sound=obj.get("sound").isJsonNull()?null:string(obj,"sound",null); if(sound!=null)identifier(sound);
-            int ticks=integer(obj,"transition_ticks",30); if(ticks<1||ticks>1200)throw new IllegalArgumentException("transition_ticks must be 1..1200");
+            int ticks=integer(obj,"transition_ticks",4); if(ticks<1||ticks>1200)throw new IllegalArgumentException("transition_ticks must be 1..1200");
             JsonObject m=obj.getAsJsonObject("match"); if(m==null)throw new IllegalArgumentException("match is required");
             keys(m,Set.of("battle_type","species","forms","aspects","labels","trainers","pokemon_uuids","encounters","dimensions","biomes","box"));
             String type=string(m,"battle_type",null); if(type!=null&&!Set.of("wild","trainer").contains(type))throw new IllegalArgumentException("invalid battle_type");

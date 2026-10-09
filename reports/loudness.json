@@ -1,0 +1,348 @@
+{
+  "success": true,
+  "target": {
+    "version": 1,
+    "integrated_lufs": -16.0,
+    "true_peak_dbtp": -2.0,
+    "loudness_range_lu": 20.0,
+    "leading_silence_threshold_db": -60.0
+  },
+  "tracks": {
+    "legendary.arceus": {
+      "leading_silence_removed_seconds": 1.105317,
+      "input_lufs": -11.93,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -3.71
+    },
+    "legendary.calyrex": {
+      "leading_silence_removed_seconds": 0.205771,
+      "input_lufs": -12.94,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -2.43
+    },
+    "legendary.celebi": {
+      "leading_silence_removed_seconds": 0.076937,
+      "input_lufs": -7.74,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -5.04
+    },
+    "legendary.cosmog_family": {
+      "leading_silence_removed_seconds": 0.094524,
+      "input_lufs": -9.59,
+      "output_lufs": -16.04,
+      "output_true_peak_dbtp": -5.38
+    },
+    "legendary.deoxys": {
+      "leading_silence_removed_seconds": 0.163526,
+      "input_lufs": -12.84,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -2.82
+    },
+    "legendary.dialga_palkia": {
+      "leading_silence_removed_seconds": 0.123277,
+      "input_lufs": -8.57,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -4.2
+    },
+    "legendary.entei": {
+      "leading_silence_removed_seconds": 0.237948,
+      "input_lufs": -8.21,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -5.64
+    },
+    "legendary.eternatus": {
+      "leading_silence_removed_seconds": 0.427925,
+      "input_lufs": -11.37,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -2.94
+    },
+    "legendary.galar_dogs": {
+      "leading_silence_removed_seconds": 0.070986,
+      "input_lufs": -10.31,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -4.91
+    },
+    "legendary.galar_horses": {
+      "leading_silence_removed_seconds": 0.232732,
+      "input_lufs": -17.45,
+      "output_lufs": -16.07,
+      "output_true_peak_dbtp": -2.08
+    },
+    "legendary.galarian_birds": {
+      "leading_silence_removed_seconds": 0.363073,
+      "input_lufs": -11.22,
+      "output_lufs": -16.13,
+      "output_true_peak_dbtp": -3.93
+    },
+    "legendary.gen1": {
+      "leading_silence_removed_seconds": 0.0,
+      "input_lufs": -8.43,
+      "output_lufs": -16.07,
+      "output_true_peak_dbtp": -4.21
+    },
+    "legendary.gen6": {
+      "leading_silence_removed_seconds": 0.153912,
+      "input_lufs": -10.27,
+      "output_lufs": -16.04,
+      "output_true_peak_dbtp": -3.48
+    },
+    "legendary.gen7_specials": {
+      "leading_silence_removed_seconds": 0.106655,
+      "input_lufs": -9.89,
+      "output_lufs": -16.03,
+      "output_true_peak_dbtp": -5.5
+    },
+    "legendary.gen8_specials": {
+      "leading_silence_removed_seconds": 0.038312,
+      "input_lufs": -10.34,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -4.5
+    },
+    "legendary.giratina": {
+      "leading_silence_removed_seconds": 0.10178,
+      "input_lufs": -9.79,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -5.55
+    },
+    "legendary.ho_oh": {
+      "leading_silence_removed_seconds": 0.061259,
+      "input_lufs": -8.36,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -4.97
+    },
+    "legendary.lake_guardians": {
+      "leading_silence_removed_seconds": 0.147834,
+      "input_lufs": -8.23,
+      "output_lufs": -16.02,
+      "output_true_peak_dbtp": -6.65
+    },
+    "legendary.loyal_three": {
+      "leading_silence_removed_seconds": 0.215385,
+      "input_lufs": -15.33,
+      "output_lufs": -16.11,
+      "output_true_peak_dbtp": -3.69
+    },
+    "legendary.lugia": {
+      "leading_silence_removed_seconds": 0.147971,
+      "input_lufs": -9.83,
+      "output_lufs": -16.0,
+      "output_true_peak_dbtp": -5.47
+    },
+    "legendary.miraidon_koraidon": {
+      "leading_silence_removed_seconds": 0.052483,
+      "input_lufs": -10.43,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -3.21
+    },
+    "legendary.necrozma": {
+      "leading_silence_removed_seconds": 0.108197,
+      "input_lufs": -12.85,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -2.33
+    },
+    "legendary.ogerpon": {
+      "leading_silence_removed_seconds": 0.129376,
+      "input_lufs": -9.6,
+      "output_lufs": -16.07,
+      "output_true_peak_dbtp": -3.33
+    },
+    "legendary.paradox": {
+      "leading_silence_removed_seconds": 0.167676,
+      "input_lufs": -9.62,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -4.41
+    },
+    "legendary.paradox_future_trio": {
+      "leading_silence_removed_seconds": 0.061871,
+      "input_lufs": -10.27,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -4.41
+    },
+    "legendary.paradox_past_trio": {
+      "leading_silence_removed_seconds": 0.059943,
+      "input_lufs": -11.84,
+      "output_lufs": -16.09,
+      "output_true_peak_dbtp": -3.76
+    },
+    "legendary.pecharunt": {
+      "leading_silence_removed_seconds": 0.267676,
+      "input_lufs": -14.61,
+      "output_lufs": -16.13,
+      "output_true_peak_dbtp": -1.86
+    },
+    "legendary.raikou": {
+      "leading_silence_removed_seconds": 0.065907,
+      "input_lufs": -10.44,
+      "output_lufs": -16.07,
+      "output_true_peak_dbtp": -4.98
+    },
+    "legendary.regi": {
+      "leading_silence_removed_seconds": 0.104184,
+      "input_lufs": -9.63,
+      "output_lufs": -16.04,
+      "output_true_peak_dbtp": -4.97
+    },
+    "legendary.remaining_gen3": {
+      "leading_silence_removed_seconds": 0.078311,
+      "input_lufs": -9.81,
+      "output_lufs": -16.02,
+      "output_true_peak_dbtp": -5.2
+    },
+    "legendary.remaining_gen4": {
+      "leading_silence_removed_seconds": 0.414773,
+      "input_lufs": -9.69,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -4.69
+    },
+    "legendary.remaining_gen5": {
+      "leading_silence_removed_seconds": 0.130215,
+      "input_lufs": -10.29,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -3.96
+    },
+    "legendary.suicune": {
+      "leading_silence_removed_seconds": 0.132979,
+      "input_lufs": -9.09,
+      "output_lufs": -16.03,
+      "output_true_peak_dbtp": -5.13
+    },
+    "legendary.tao_trio": {
+      "leading_silence_removed_seconds": 0.161259,
+      "input_lufs": -7.94,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -5.14
+    },
+    "legendary.tapu": {
+      "leading_silence_removed_seconds": 0.064116,
+      "input_lufs": -11.2,
+      "output_lufs": -16.03,
+      "output_true_peak_dbtp": -3.52
+    },
+    "legendary.terapagos": {
+      "leading_silence_removed_seconds": 0.528492,
+      "input_lufs": -8.9,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -5.33
+    },
+    "legendary.treasures_of_ruin": {
+      "leading_silence_removed_seconds": 0.062438,
+      "input_lufs": -9.94,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -5.5
+    },
+    "legendary.ultra_beasts": {
+      "leading_silence_removed_seconds": 0.165408,
+      "input_lufs": -5.94,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -6.59
+    },
+    "legendary.victini": {
+      "leading_silence_removed_seconds": 0.110215,
+      "input_lufs": -6.9,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -6.86
+    },
+    "legendary.victini_alternative": {
+      "leading_silence_removed_seconds": 0.022823,
+      "input_lufs": -6.82,
+      "output_lufs": -16.1,
+      "output_true_peak_dbtp": -6.81
+    },
+    "legendary.weather_trio": {
+      "leading_silence_removed_seconds": 0.565952,
+      "input_lufs": -9.46,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -5.52
+    },
+    "trainer.kanto.agatha": {
+      "leading_silence_removed_seconds": 0.0,
+      "input_lufs": -17.27,
+      "output_lufs": -15.98,
+      "output_true_peak_dbtp": -1.99
+    },
+    "trainer.kanto.bruno": {
+      "leading_silence_removed_seconds": 0.0,
+      "input_lufs": -10.82,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -3.53
+    },
+    "trainer.kanto.champion": {
+      "leading_silence_removed_seconds": 0.114206,
+      "input_lufs": -10.33,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -4.86
+    },
+    "trainer.kanto.gym": {
+      "leading_silence_removed_seconds": 0.064637,
+      "input_lufs": -7.54,
+      "output_lufs": -16.03,
+      "output_true_peak_dbtp": -5.61
+    },
+    "trainer.kanto.lance": {
+      "leading_silence_removed_seconds": 0.029807,
+      "input_lufs": -6.28,
+      "output_lufs": -16.02,
+      "output_true_peak_dbtp": -6.82
+    },
+    "trainer.kanto.lorelei": {
+      "leading_silence_removed_seconds": 0.097857,
+      "input_lufs": -11.66,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -5.44
+    },
+    "wild.gen1": {
+      "leading_silence_removed_seconds": 0.026958,
+      "input_lufs": -12.66,
+      "output_lufs": -16.08,
+      "output_true_peak_dbtp": -3.36
+    },
+    "wild.gen2": {
+      "leading_silence_removed_seconds": 0.068875,
+      "input_lufs": -8.73,
+      "output_lufs": -16.04,
+      "output_true_peak_dbtp": -5.91
+    },
+    "wild.gen3": {
+      "leading_silence_removed_seconds": 0.171792,
+      "input_lufs": -11.7,
+      "output_lufs": -16.07,
+      "output_true_peak_dbtp": -3.91
+    },
+    "wild.gen4": {
+      "leading_silence_removed_seconds": 0.148938,
+      "input_lufs": -9.81,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -5.78
+    },
+    "wild.gen5": {
+      "leading_silence_removed_seconds": 0.140624,
+      "input_lufs": -9.3,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -5.24
+    },
+    "wild.gen6": {
+      "leading_silence_removed_seconds": 0.125208,
+      "input_lufs": -7.77,
+      "output_lufs": -16.09,
+      "output_true_peak_dbtp": -6.06
+    },
+    "wild.gen7": {
+      "leading_silence_removed_seconds": 0.689333,
+      "input_lufs": -10.61,
+      "output_lufs": -16.05,
+      "output_true_peak_dbtp": -4.29
+    },
+    "wild.gen8": {
+      "leading_silence_removed_seconds": 0.376859,
+      "input_lufs": -9.98,
+      "output_lufs": -16.06,
+      "output_true_peak_dbtp": -3.77
+    },
+    "wild.gen9": {
+      "leading_silence_removed_seconds": 0.074592,
+      "input_lufs": -10.43,
+      "output_lufs": -16.04,
+      "output_true_peak_dbtp": -4.16
+    }
+  }
+}

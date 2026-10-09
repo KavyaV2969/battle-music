@@ -35,7 +35,10 @@ def build(skip_audio=False):
         subprocess.run([str(JAVA/'java.exe'),'-cp',os.pathsep.join([str(testclasses),str(classes),cp]),'dev.battlemusic.Verification',str(ROOT)],check=True)
     fixtures=list((ROOT/'src/integration/java').rglob('*.java'))
     if fixtures:
-        fixtureclasses=ROOT/'build/fixture-classes';compile_sources(fixtureclasses,fixtures,str(classes)+os.pathsep+cp)
+        fixtureclasses=ROOT/'build/fixture-classes'
+        if not fixtureclasses.resolve().is_relative_to((ROOT/'build').resolve()):raise RuntimeError('Unsafe fixture output path')
+        if fixtureclasses.exists():shutil.rmtree(fixtureclasses)
+        compile_sources(fixtureclasses,fixtures,str(classes)+os.pathsep+cp)
         zip_tree(ROOT/'integration/battlemusic-verification.jar',[fixtureclasses,ROOT/'src/integration/resources'])
     zip_tree(dist/f'battlemusic-defaults-{VERSION}.zip',[ROOT/'datapack'])
     if not skip_audio:

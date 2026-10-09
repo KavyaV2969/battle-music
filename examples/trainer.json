@@ -1,1 +1,1 @@
-{"schema_version":1,"kind":"base","priority":500,"match":{"battle_type":"trainer","trainers":["rctmod:kanto_brock"]},"sound":"battlemusic:trainer.kanto.champion","transition_ticks":30}
+{"schema_version":1,"kind":"base","priority":500,"match":{"battle_type":"trainer","trainers":["rctmod:kanto_brock"]},"sound":"battlemusic:trainer.kanto.champion","transition_ticks":4}

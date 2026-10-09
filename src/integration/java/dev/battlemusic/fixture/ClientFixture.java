@@ -12,20 +12,23 @@ import java.util.concurrent.*;
 /** Audio assertions run on the actual sound executor, including OpenAL state and stream offset. */
 public final class ClientFixture implements ClientModInitializer {
     private ManagedSound retained;private class_4235.class_4236 retainedChannel;private float pausedOffset;
-    private Object retainedSource,retainedStream;private ManagedSound previousEntrance;
-    private int stable,togglePhase;private boolean defaultVerified;private String last="";private CompletableFuture<float[]> probe;
+    private final Object[] sources=new Object[3],streams=new Object[3];private ManagedSound previousEntrance;
+    private BackgroundSound background;private UUID entranceUuid;private float entrancePausedOffset;
+    private int stable,togglePhase,outroTicks;private boolean defaultVerified,resumeProbed;private String last="";
+    private CompletableFuture<float[]> probe,voiceProbe;
     @Override public void onInitializeClient(){ClientTickEvents.END_CLIENT_TICK.register(client->{
         if(Shared.error!=null||Shared.expect.isBlank()||Shared.expect.equals(Shared.ack))return;
         try{tick();}catch(Throwable e){Shared.error=e.toString();e.printStackTrace();}
     });}
-    private class_4235.class_4236 channel(ManagedSound sound){return ((SoundSystemAccessor)((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine()).battlemusic$channels().get(sound);}
-    private CompletableFuture<float[]> probe(ManagedSound sound){
+    private class_4235.class_4236 channel(class_1113 sound){return ((SoundSystemAccessor)((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine()).battlemusic$channels().get(sound);}
+    private CompletableFuture<float[]> probe(class_1113 sound){return probe(sound,0);}
+    private CompletableFuture<float[]> probe(class_1113 sound,int role){
         var future=new CompletableFuture<float[]>();var channel=channel(sound);if(channel==null){future.completeExceptionally(new IllegalStateException("No audio channel"));return future;}
         channel.method_19735(source->{try{
             var field=class_4224.class.getDeclaredField("field_18893");field.setAccessible(true);int id=field.getInt(source);
             var streamField=class_4224.class.getDeclaredField("field_18896");streamField.setAccessible(true);Object stream=streamField.get(source);
-            if(retainedSource==null){retainedSource=source;retainedStream=stream;}
-            if(source!=retainedSource||stream!=retainedStream)throw new AssertionError("OpenAL source or decoder stream replaced");
+            if(sources[role]==null){sources[role]=source;streams[role]=stream;}
+            if(source!=sources[role]||stream!=streams[role])throw new AssertionError("OpenAL source or decoder stream replaced for role "+role);
             var al=Class.forName("org.lwjgl.openal.AL10");
             float offset=(float)al.getMethod("alGetSourcef",int.class,int.class).invoke(null,id,0x1024);
             int state=(int)al.getMethod("alGetSourcei",int.class,int.class).invoke(null,id,0x1010);
@@ -35,8 +38,15 @@ public final class ClientFixture implements ClientModInitializer {
     }
     private void tick()throws Exception{
         String expect=Shared.expect;var p=Playback.INSTANCE;
-        if(!expect.equals(last)){last=expect;stable=0;probe=null;}
-        if(expect.equals("ended")){if(!p.owns()){ack("Battle end releases channels and restores background playback");}return;}
+        if(!expect.equals(last)){last=expect;stable=outroTicks=0;probe=voiceProbe=null;resumeProbed=false;}
+        if(expect.equals("background")){
+            if(background==null){background=new BackgroundSound();class_310.method_1551().method_1483().method_4873(background);return;}
+            if(channel(background)==null)return;
+            if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
+            if(probe.join()[1]!=0x1012)throw new AssertionError("Background probe not playing");
+            ack("Independent background audio probe starts before battle");return;
+        }
+        if(expect.equals("ended")){checkOutro(p);return;}
         if(p.state()==null||p.base()==null)return;
         String base=p.base().method_4775().toString();
         switch(expect){
@@ -56,24 +66,36 @@ public final class ClientFixture implements ClientModInitializer {
                 if(expect.equals("overlay")&&!defaultVerified){
                     if(p.state().entrance()==null)return;
                     if(p.entrance()!=null||p.base().paused||p.base().gain.value()<.99)throw new AssertionError("Default-off trainer entrance interrupted base");
-                    if(++stable<35)return;
+                    if(++stable<2)return;
                     Shared.checks.add("Trainer Arceus sends an entrance decision but default-off preference keeps gym audio playing");
                     ClientSettings.setTrainerEntrances(true);ClientSettings.save();ClientSettings.load();
                     if(!ClientSettings.trainerEntrances())throw new AssertionError("Preference did not persist");
                     defaultVerified=true;stable=0;
                 }
                 if(p.entrance()==null||!p.entrance().method_4775().toString().equals("battlemusic:legendary.arceus")||!p.base().paused)return;
-                if(++stable<20)return;if(p.base()!=retained||channel(p.base())!=retainedChannel)throw new AssertionError("Base/channel replaced on interruption");
+                if(++stable<2)return;if(p.base()!=retained||channel(p.base())!=retainedChannel)throw new AssertionError("Base/channel replaced on interruption");
                 if(probe==null){probe=probe(retained);return;}if(!probe.isDone())return;
                 float[] sample=probe.join();if(sample[1]!=0x1013)throw new AssertionError("Base source was not paused: "+Arrays.toString(sample));
                 pausedOffset=sample[0];Shared.measurements.addProperty("pausedSourceOffsetSeconds",pausedOffset);
-                if(expect.equals("reentered")&&p.entrance()==previousEntrance)throw new AssertionError("Re-entry reused old entrance voice");
-                previousEntrance=p.entrance();
-                ack(expect.equals("reentered")?"Repeated opponent entry restarts entrance voice while retaining trainer source":"Actual trainer switch to Arceus crossfades and pauses the original OpenAL channel");break;
+                if(expect.equals("reentered")&&p.entrance()!=previousEntrance)throw new AssertionError("Re-entry replaced retained entrance voice");
+                if(voiceProbe==null){voiceProbe=probe(p.entrance(),1);return;}if(!voiceProbe.isDone())return;
+                if(voiceProbe.join()[1]!=0x1012||voiceProbe.join()[2]<=0)throw new AssertionError("Entrance is not audibly playing");
+                previousEntrance=p.entrance();entranceUuid=p.state().pokemon();
+                if(expect.equals("reentered")){
+                    long millis=(System.nanoTime()-Shared.entrySentNanos)/1_000_000;
+                    if(Shared.entrySentNanos==0||millis>600)throw new AssertionError("Entrance response too late: "+millis+" ms");
+                    Shared.measurements.addProperty("reentryAudibleAfterSendoutPacketMs",millis);
+                    Shared.measurements.addProperty("sameEntranceOpenALSourceAndDecoder",true);
+                }
+                ack(expect.equals("reentered")?"Opponent re-entry resumes its retained entrance voice/source/decoder within 600 ms of send-out":"Actual trainer switch to Arceus crossfades and pauses the original OpenAL channel");break;
             case "pause-retained":
                 if(++stable<40)return;if(probe==null){probe=probe(retained);return;}if(!probe.isDone())return;
                 float[] paused=probe.join();if(paused[1]!=0x1013||Math.abs(paused[0]-pausedOffset)>.03)throw new AssertionError("Paused music advanced: "+Arrays.toString(paused)+" from "+pausedOffset);
                 ack("Paused base stream offset remains fixed while entrance music plays");break;
+            case "entrance-pause-retained":
+                if(++stable<40)return;if(probe==null){probe=probe(previousEntrance,1);return;}if(!probe.isDone())return;
+                float[] benched=probe.join();if(benched[1]!=0x1013||Math.abs(benched[0]-entrancePausedOffset)>.03)throw new AssertionError("Benched entrance music advanced: "+Arrays.toString(benched));
+                ack("Benched Arceus retains a fixed stream offset until re-entry");break;
             case "toggle-off":
                 if(togglePhase==0){ClientSettings.setTrainerEntrances(false);ClientSettings.save();togglePhase=1;}
                 if(togglePhase==1){
@@ -92,11 +114,17 @@ public final class ClientFixture implements ClientModInitializer {
                 if(p.state().entrance()!=null||p.entrance()!=null||p.base().paused)throw new AssertionError("Champion theme interrupted by active Arceus");
                 if(++stable<45)return;
                 ack("Actual RCT Champion Blue with active Arceus keeps updated Champion theme even with interruptions enabled");break;
+            case "leading":
+                if(!base.equals("battlemusic:trainer.kanto.gym")||p.entrance()==null)return;
+                if(p.state().revision()!=1||p.entrance().gain.value()!=1||p.base().gain.value()!=0)throw new AssertionError("Leading Arceus did not start immediately at full gain: "+p.state().json()+" entrance="+p.entrance().gain.value()+" base="+p.base().gain.value());
+                if(channel(p.entrance())==null)return;
+                if(++stable<4)return;
+                ack("Leading trainer Arceus starts with full entrance gain and no trainer-theme blip or fade-in");break;
             case "elite-lorelei": case "elite-bruno": case "elite-agatha": case "elite-lance":
                 String member=expect.substring(6);
                 if(!base.equals("battlemusic:trainer.kanto."+member)||channel(p.base())==null)return;
                 if(++stable<45)return;
-                if(probe==null){retainedSource=retainedStream=null;probe=probe(p.base());return;}if(!probe.isDone())return;
+                if(probe==null){sources[0]=streams[0]=null;probe=probe(p.base());return;}if(!probe.isDone())return;
                 float[] elite=probe.join();if(elite[1]!=0x1012||elite[2]<=0)throw new AssertionError("Elite Four theme is not audible");
                 ack("Actual RCT "+member+" battle plays its individual imported track with positive OpenAL gain");break;
             case "resumed": case "switch-resumed":
@@ -108,18 +136,27 @@ public final class ClientFixture implements ClientModInitializer {
                 // when processed buffers are unqueued. Source and decoder identities prove retention.
                 Shared.measurements.addProperty("resumedQueueOffsetSeconds",resumed[0]);
                 Shared.measurements.addProperty("sameOpenALSourceAndDecoder",true);
+                if(expect.equals("switch-resumed")){
+                    if(voiceProbe==null){voiceProbe=probe(previousEntrance,1);return;}if(!voiceProbe.isDone())return;
+                    float[] pausedVoice=voiceProbe.join();
+                    if(pausedVoice[1]!=0x1013)throw new AssertionError("Recalled entrance source not paused");
+                    entrancePausedOffset=pausedVoice[0];Shared.measurements.addProperty("pausedEntranceOffsetSeconds",entrancePausedOffset);
+                    long millis=(System.nanoTime()-Shared.recallStartedNanos)/1_000_000;
+                    if(Shared.recallStartedNanos==0||millis>600)throw new AssertionError("Recall response too late: "+millis+" ms");
+                    Shared.measurements.addProperty("trainerResumedAfterRecallStartMs",millis);
+                }
                 ack(expect.equals("switch-resumed")?"Opponent switch-out audibly resumes the original source and decoder":"Arceus faint audibly resumes the same base sound, OpenAL source and decoder stream");break;
             case "rapid":
                 if(stable++==0){
                     var latest=p.state();
-                    for(int i=1;i<=12;i++)localEntrance(p,new MusicState(1,latest.battle(),latest.revision(),latest.base(),latest.fallback(),1,1,
-                        i%2==0?null:"battlemusic:legendary.arceus",i%2==0?null:UUID.randomUUID(),30,false));
+                    for(int i=1;i<=24;i++)localEntrance(p,new MusicState(1,latest.battle(),latest.revision(),latest.base(),latest.fallback(),1,1,
+                        i%2==0?null:"battlemusic:legendary.arceus",i%2==0?null:new UUID(0,100+i),4,false));
                 }
                 if(stable<40)return;
                 if(p.base()!=retained||channel(retained)!=retainedChannel||p.entrance()!=null||retained.paused)throw new AssertionError("Rapid retargeting lost retained base");
                 long voices=((SoundSystemAccessor)((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine()).battlemusic$channels().keySet().stream().filter(s->s instanceof ManagedSound).count();
-                if(voices!=1)throw new AssertionError("Rapid changes leaked voices: "+voices);
-                ack("Twelve rapid entrance changes settle on the same retained base with no leaked voices");break;
+                if(voices!=14||!previousEntrance.paused)throw new AssertionError("Retained voice capacity/cleanup mismatch: "+voices);
+                ack("Twenty-four rapid changes retain base and thirteen paused entrances beyond the reserved streaming-pool limit");break;
             case "stale":
                 MusicState before=p.state();p.accept(new MusicState(1,before.battle(),0,before.base(),before.fallback(),1,1,null,null,30,false));
                 if(p.state()!=before)throw new AssertionError("Stale revision replaced current state");ack("Stale payload ignored");break;
@@ -128,6 +165,23 @@ public final class ClientFixture implements ClientModInitializer {
                 localEntrance(p,new MusicState(1,previous.battle(),previous.revision(),previous.base(),previous.fallback(),1,1,"battlemusic:missing",UUID.randomUUID(),30,false));
                 if(p.entrance()!=null||p.base()!=retained)throw new AssertionError("Missing audio destroyed base");ack("Missing entrance audio retains original base");break;
         }
+    }
+    private void checkOutro(Playback p){
+        if(p.owns()){
+            if(!p.state().ended())return;outroTicks++;
+            com.cobblemon.mod.common.util.SoundExtensionsKt.resumeSounds(class_310.method_1551().method_1483(),null,class_3419.field_15253);
+            ((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine().method_19762();
+            if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
+            if(probe.join()[1]!=0x1013)throw new AssertionError("Background resumed before battle tail finished");
+            probe=null;return;
+        }
+        if(outroTicks<65)throw new AssertionError("Outro/background gap too short: "+outroTicks);
+        if(!resumeProbed){probe=null;resumeProbed=true;}
+        if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
+        if(probe.join()[1]!=0x1012)throw new AssertionError("Background did not resume after outro");
+        long voices=((SoundSystemAccessor)((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine()).battlemusic$channels().keySet().stream().filter(s->s instanceof ManagedSound).count();
+        if(voices!=0)return;
+        ack("Background stays paused throughout the battle tail and quiet gap, then resumes; retained battle channels are released");
     }
     private void localEntrance(Playback controller,MusicState selection)throws Exception{
         // Exercise playback failures/retargeting without forging authoritative server revisions.

@@ -1,1 +1,1 @@
-{"schema_version":1,"kind":"base","priority":800,"match":{"battle_type":"wild","encounters":["mypack:cave_guardian"],"dimensions":["minecraft:overworld"],"box":{"min":[-100,-64,-100],"max":[100,100,100]}},"sound":"battlemusic:legendary.arceus","transition_ticks":30}
+{"schema_version":1,"kind":"base","priority":800,"match":{"battle_type":"wild","encounters":["mypack:cave_guardian"],"dimensions":["minecraft:overworld"],"box":{"min":[-100,-64,-100],"max":[100,100,100]}},"sound":"battlemusic:legendary.arceus","transition_ticks":4}

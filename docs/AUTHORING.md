@@ -9,11 +9,13 @@ Put rules at `data/<namespace>/battlemusic/rules/<name>.json` inside a Minecraft
   "priority": 500,
   "match": {"battle_type": "trainer", "species": ["cobblemon:pikachu"]},
   "sound": "battlemusic:legendary.victini_alternative",
-  "transition_ticks": 30
+  "transition_ticks": 4
 }
 ```
 
 `kind` is `base` or `entrance`. Base chooses an encounter's underlying music. Entrance temporarily replaces that base while a matching opponent is active. The winning entrance must have a sound; a winning `sound: null` suppresses the entrance and prevents a lower-priority rule from supplying one. A base rule with `sound: null` retains the native event.
+
+`transition_ticks` defaults to 4 (200 ms); an explicitly longer value remains supported. Opening entrance themes start without a fade. Entrance position is retained per opposing Pokémon UUID and sound event until battle end; switching to a different sound for the same Pokémon creates its own retained voice. Resource/audio-engine reloads discard these positions.
 
 Trainer entrance playback is a client preference, **off by default**, exposed in the mod's Mod Menu settings. Datapacks still select and send the current entrance decision, so enabling the preference during a battle takes effect immediately. Base trainer assignments work with either setting. Champion trainer identities suppress entrance decisions on the server regardless of client preference or rule priority. Champion detection recognizes a `champion` path component/token, including `rctmod:kanto_champion_blue`; trainer adapters for other mods should use identities such as `mypack:champion_blue` or `mypack:league/champion`. An adapter exposing an opaque ID without that token cannot be classified automatically.
 
