@@ -1,7 +1,7 @@
 """Measured two-pass normalization of private music; originals are preserved."""
 import json, math, re, subprocess
 
-PROFILE = dict(version=1, integrated_lufs=-16.0, true_peak_dbtp=-2.0, loudness_range_lu=20.0,
+PROFILE = dict(version=2, integrated_lufs=-14.0, true_peak_dbtp=-2.0, loudness_range_lu=20.0,
                leading_silence_threshold_db=-60.0)
 
 def leading_silence(ffmpeg, path):
@@ -17,7 +17,7 @@ def leading_silence(ffmpeg, path):
 def measure(ffmpeg,path,trim=0.0):
     prefix=f'atrim=start={trim:.6f},asetpts=PTS-STARTPTS,' if trim else ''
     run=subprocess.run([ffmpeg,'-nostdin','-hide_banner','-i',str(path),'-vn','-af',
-        prefix+'loudnorm=I=-16:TP=-2:LRA=20:print_format=json','-f','null','NUL'],capture_output=True,text=True,check=True)
+        prefix+f'loudnorm=I={PROFILE["integrated_lufs"]}:TP={PROFILE["true_peak_dbtp"]}:LRA={PROFILE["loudness_range_lu"]}:print_format=json','-f','null','NUL'],capture_output=True,text=True,check=True)
     match=re.search(r'\{\s*"input_i".*?\}',run.stderr,re.S)
     if not match:raise ValueError(f'No loudness measurement: {path}')
     result=json.loads(match.group())
@@ -25,9 +25,10 @@ def measure(ffmpeg,path,trim=0.0):
         raise ValueError(f'Non-finite loudness: {path}')
     return result
 
-def normalization_filter(measured,trim):
+def normalization_filter(measured,trim,peak=None):
+    peak=PROFILE['true_peak_dbtp'] if peak is None else peak
     return (f'atrim=start={trim:.6f},asetpts=PTS-STARTPTS,'
-        'loudnorm=I=-16:TP=-2:LRA=20:linear=true:'
+        f'loudnorm=I={PROFILE["integrated_lufs"]}:TP={peak}:LRA={PROFILE["loudness_range_lu"]}:linear=true:'
         f'measured_I={measured["input_i"]}:measured_TP={measured["input_tp"]}:'
         f'measured_LRA={measured["input_lra"]}:measured_thresh={measured["input_thresh"]}:'
         f'offset={measured["target_offset"]}')

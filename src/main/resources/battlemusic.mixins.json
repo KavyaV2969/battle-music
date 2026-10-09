@@ -4,6 +4,6 @@
   "package": "dev.battlemusic.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": ["PlayerActorMixin", "BattleTickMixin", "SwitchMusicMixin", "InitialMusicMixin"],
-  "client": ["MusicHandlerMixin", "MusicManagerMixin", "SoundManagerAccessor", "SoundSystemAccessor", "SoundFilterMixin", "BackgroundResumeMixin", "BackgroundEngineMixin", "RetainedChannelMixin"],
+  "client": ["MusicHandlerMixin", "MusicManagerMixin", "SoundManagerAccessor", "SoundSystemAccessor", "SoundFilterMixin", "BackgroundResumeMixin", "BackgroundEngineMixin", "BackgroundVolumeMixin", "RetainedChannelMixin"],
   "injectors": {"defaultRequire": 1}
 }

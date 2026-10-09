@@ -6,6 +6,7 @@ The receipts in `reports/` identify the exact mod JAR SHA-256. The isolated clie
 | --- | --- |
 | Nine generation themes, form generation precedence, gen7b/gen8a | Automated matcher tests |
 | Every explicit special assignment, Galarian birds, paradox trios | Matcher tests and installed species/form coverage audit |
+| Trimmed Victini recording | Catalog regression check selects Desktop `Legendary/Victini.mp3`; audio import receipt verifies its source hash |
 | Encounter UUID/key, biome tags, box and combined conditions | Automated matcher tests |
 | Rule validation, immutable snapshots, null overrides | Automated matcher tests |
 | Doubles priority, sticky incumbent, stable slot ordering | Automated selection tests |
@@ -18,6 +19,7 @@ The receipts in `reports/` identify the exact mod JAR SHA-256. The isolated clie
 | Entrance theme retention and immediate leading theme | Fixed entrance stream offset while benched, same sound/source/decoder on re-entry; leading Arceus has full gain in initial revision |
 | Recall/send-out timing | Test-only hooks timestamp committed recall and native send-out packets; audible gain assertions within 600 ms |
 | Battle outro before background resumes | Independent quiet BGM source remains paused through fade and quiet gap, including forced Cobblemon and global engine resume attempts |
+| Background fade-in after trainer battles | Non-tickable BGM source starts near silence, gains volume monotonically through midpoint and reaches its original gain over 60 ticks; newly started BGM and category-volume updates also respect the fade |
 | Consistent levels and leading silence | Measure every finished Vorbis file; `reports/loudness.json` records LUFS, true peak and leading trim |
 | Rapid fades and missing entrance recovery | Playback controller exercised in the live sound engine |
 | Retained voice capacity | Twenty-four rapid retargets retain thirteen paused entrance streams plus base, avoiding the small reserved streaming-source pool |
@@ -27,7 +29,9 @@ The receipts in `reports/` identify the exact mod JAR SHA-256. The isolated clie
 
 OpenAL's `AL_SEC_OFFSET` is relative to the current streaming buffer queue, so it can decrease when processed buffers are removed. The live check verifies that this offset remains fixed while paused, and that the same sound instance, channel manager, OpenAL source and decoder stream resume with positive gain. It does not treat a queue-relative offset as an absolute song timestamp.
 
-The latest successful isolated run measured audible trainer resumption 302 ms after the committed Arceus recall began, and audible Arceus re-entry 323 ms after the native send-out packet. These include the four-tick crossfade and asynchronous test sampling; they are measurements of this local run, not a multiplayer latency guarantee. All 56 finished tracks measured between −16.13 and −15.98 LUFS. Lance measured −16.02 LUFS and Agatha −15.98 LUFS after normalization.
+The live receipt records audible trainer resumption after the committed Arceus recall and audible Arceus re-entry after the native send-out packet. These include the four-tick crossfade and asynchronous test sampling; they are local measurements, not a multiplayer latency guarantee. The audio report separately measures all 56 finished tracks against the shared −14 LUFS target, including Agatha and Lance.
+
+The current pack measures −14.27 to −13.82 LUFS, with its highest post-encoding true peak at −1.31 dBTP. Agatha measures −13.96 LUFS and Lance −14.02 LUFS. Pecharunt required a −3 dBTP encoding target to keep the decoded Vorbis peaks below the ceiling while retaining the same loudness target.
 
 The isolated fixture replaces two lead Pokémon to make switching/fainting deterministic and clears team EVs in memory: a supplied boss team otherwise fails RCT's Cobblemon cloning path with `EVs cannot exceed a total of 510`. The music checks exercise live RCT identities, battle creation, networking and audio; they do not validate the supplied teams' competitive legality or balance. Neither the mod nor the installer changes trainer teams or their datapack files.
 

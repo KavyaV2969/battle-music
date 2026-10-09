@@ -12,10 +12,13 @@ import java.util.concurrent.*;
 /** Audio assertions run on the actual sound executor, including OpenAL state and stream offset. */
 public final class ClientFixture implements ClientModInitializer {
     private ManagedSound retained;private class_4235.class_4236 retainedChannel;private float pausedOffset;
-    private final Object[] sources=new Object[3],streams=new Object[3];private ManagedSound previousEntrance;
+    private final Object[] sources=new Object[4],streams=new Object[4];private ManagedSound previousEntrance;
     private BackgroundSound background;private UUID entranceUuid;private float entrancePausedOffset;
     private int stable,togglePhase,outroTicks;private boolean defaultVerified,resumeProbed;private String last="";
     private CompletableFuture<float[]> probe,voiceProbe;
+    private float backgroundFullGain,lastBackgroundGain;private int backgroundFadeTicks;
+    private boolean trainerOutro,sawBackgroundFade,sawQuietBackground,sawMidBackground,lateTestDone;
+    private BackgroundSound lateBackground;private CompletableFuture<float[]> lateProbe;
     @Override public void onInitializeClient(){ClientTickEvents.END_CLIENT_TICK.register(client->{
         if(Shared.error!=null||Shared.expect.isBlank()||Shared.expect.equals(Shared.ack))return;
         try{tick();}catch(Throwable e){Shared.error=e.toString();e.printStackTrace();}
@@ -27,7 +30,8 @@ public final class ClientFixture implements ClientModInitializer {
         channel.method_19735(source->{try{
             var field=class_4224.class.getDeclaredField("field_18893");field.setAccessible(true);int id=field.getInt(source);
             var streamField=class_4224.class.getDeclaredField("field_18896");streamField.setAccessible(true);Object stream=streamField.get(source);
-            if(sources[role]==null){sources[role]=source;streams[role]=stream;}
+            if(sources[role]==null)sources[role]=source;
+            if(streams[role]==null&&stream!=null)streams[role]=stream; // Initial asynchronous decoder attachment is expected.
             if(source!=sources[role]||stream!=streams[role])throw new AssertionError("OpenAL source or decoder stream replaced for role "+role);
             var al=Class.forName("org.lwjgl.openal.AL10");
             float offset=(float)al.getMethod("alGetSourcef",int.class,int.class).invoke(null,id,0x1024);
@@ -38,12 +42,18 @@ public final class ClientFixture implements ClientModInitializer {
     }
     private void tick()throws Exception{
         String expect=Shared.expect;var p=Playback.INSTANCE;
-        if(!expect.equals(last)){last=expect;stable=outroTicks=0;probe=voiceProbe=null;resumeProbed=false;}
+        if(!expect.equals(last)){
+            last=expect;stable=outroTicks=backgroundFadeTicks=0;probe=voiceProbe=null;resumeProbed=false;
+            sawBackgroundFade=sawQuietBackground=sawMidBackground=false;lastBackgroundGain=-1;
+        }
+        if(p.state()!=null&&!p.state().ended())trainerOutro=p.state().trainerBattle();
         if(expect.equals("background")){
             if(background==null){background=new BackgroundSound();class_310.method_1551().method_1483().method_4873(background);return;}
             if(channel(background)==null)return;
             if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
+            if(probe.join()[1]==0x1011){probe=null;return;}
             if(probe.join()[1]!=0x1012)throw new AssertionError("Background probe not playing");
+            backgroundFullGain=probe.join()[2];if(backgroundFullGain<=0)throw new AssertionError("Background probe has no gain");
             ack("Independent background audio probe starts before battle");return;
         }
         if(expect.equals("ended")){checkOutro(p);return;}
@@ -176,12 +186,47 @@ public final class ClientFixture implements ClientModInitializer {
             probe=null;return;
         }
         if(outroTicks<65)throw new AssertionError("Outro/background gap too short: "+outroTicks);
+        if(p.backgroundFading()){
+            if(!trainerOutro)throw new AssertionError("Wild outro unexpectedly changed background fade policy");
+            sawBackgroundFade=true;backgroundFadeTicks++;
+            float envelope=p.backgroundGain();
+            if(envelope>.2f&&envelope<.4f&&!lateTestDone&&lateBackground==null){
+                // Exercise an ordinary non-tickable BGM source starting during the fade,
+                // and Minecraft's category-volume update path at the same time.
+                lateBackground=new BackgroundSound();class_310.method_1551().method_1483().method_4873(lateBackground);
+                ((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine().method_4844(class_3419.field_15253,.65f);
+            }
+            if(lateBackground!=null&&!lateTestDone&&channel(lateBackground)!=null){
+                if(lateProbe==null)lateProbe=probe(lateBackground,3);
+                if(lateProbe.isDone()){
+                    float[] started=lateProbe.join();
+                    if(started[2]<=0||started[2]>=backgroundFullGain*.8f)throw new AssertionError("New BGM bypassed fade: "+Arrays.toString(started));
+                    if(started[1]==0x1011)lateProbe=null; // Channel allocated; streaming decoder still starts asynchronously.
+                    else{
+                        if(started[1]!=0x1012)throw new AssertionError("New BGM failed to start: "+Arrays.toString(started));
+                        Shared.measurements.addProperty("newBackgroundRelativeGainDuringFade",started[2]/backgroundFullGain);
+                        lateTestDone=true;Shared.checks.add("New non-tickable BGM and category-volume updates respect the in-progress fade");
+                    }
+                }
+            }
+            if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
+            float[] sample=probe.join();probe=null;
+            if(sample[1]!=0x1012)throw new AssertionError("Background failed to play during fade");
+            if(lastBackgroundGain>=0&&sample[2]+backgroundFullGain*.015f<lastBackgroundGain)throw new AssertionError("Background gain went backwards during fade");
+            if(envelope<.2f){if(sample[2]>=backgroundFullGain*.3f)throw new AssertionError("Background resumed at full gain");sawQuietBackground=true;}
+            if(envelope>.35f&&envelope<.65f){if(sample[2]<=backgroundFullGain*.2f||sample[2]>=backgroundFullGain*.8f)throw new AssertionError("Background midpoint gain incorrect");sawMidBackground=true;Shared.measurements.addProperty("backgroundMidFadeRelativeGain",sample[2]/backgroundFullGain);}
+            lastBackgroundGain=sample[2];return;
+        }
+        if(trainerOutro&&(!sawBackgroundFade||!sawQuietBackground||!sawMidBackground||backgroundFadeTicks<55))throw new AssertionError("Trainer background fade missing or too short: "+backgroundFadeTicks);
         if(!resumeProbed){probe=null;resumeProbed=true;}
         if(probe==null){probe=probe(background,2);return;}if(!probe.isDone())return;
         if(probe.join()[1]!=0x1012)throw new AssertionError("Background did not resume after outro");
+        if(Math.abs(probe.join()[2]-backgroundFullGain)>backgroundFullGain*.05f)throw new AssertionError("Background did not return to its original volume");
+        if(trainerOutro){Shared.measurements.addProperty("trainerBackgroundFadeTicks",backgroundFadeTicks);Shared.measurements.addProperty("backgroundFinalRelativeGain",probe.join()[2]/backgroundFullGain);}
+        if(lateBackground!=null){if(!lateTestDone)throw new AssertionError("Late BGM test incomplete");class_310.method_1551().method_1483().method_4870(lateBackground);lateBackground=null;}
         long voices=((SoundSystemAccessor)((SoundManagerAccessor)class_310.method_1551().method_1483()).battlemusic$engine()).battlemusic$channels().keySet().stream().filter(s->s instanceof ManagedSound).count();
         if(voices!=0)return;
-        ack("Background stays paused throughout the battle tail and quiet gap, then resumes; retained battle channels are released");
+        ack(trainerOutro?"Background stays paused through trainer outro, then fades smoothly from near-silence to its original gain over three seconds":"Background stays paused throughout the battle tail and quiet gap, then resumes; retained battle channels are released");
     }
     private void localEntrance(Playback controller,MusicState selection)throws Exception{
         // Exercise playback failures/retargeting without forging authoritative server revisions.

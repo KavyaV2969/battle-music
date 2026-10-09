@@ -16,6 +16,8 @@ public final class Playback {
     private final List<ManagedSound> outgoing=new ArrayList<>();
     private record Voice(UUID pokemon,String sound){}
     private final Map<Voice,ManagedSound> retainedEntrances=new HashMap<>();
+    private final Envelope backgroundGain=new Envelope(1);
+    private boolean backgroundFading,trainerSession;
     private volatile MusicState state;private ManagedSound base,entrance;private boolean ending;private volatile boolean backgroundPaused;
     private int age,outroSilence;private UUID entrancePokemon;private long resourceRevision;
     private class_1144 manager(){return class_310.method_1551().method_1483();}
@@ -23,6 +25,10 @@ public final class Playback {
     public boolean suppressBackground(){return backgroundPaused;}
     public boolean blocksBackgroundResume(class_3419 category){return suppressBackground()&&(category==null||FILTERED.contains(category));}
     public boolean filtered(class_1113 sound){return suppressBackground()&&!(sound instanceof ManagedSound)&&FILTERED.contains(sound.method_4774());}
+    public boolean backgroundFading(){return backgroundFading;}
+    public float backgroundGain(){return backgroundGain.value();}
+    public float backgroundGain(class_1113 sound){return backgroundFading&&backgroundSound(sound)?Math.max(.0001f,backgroundGain.value()):1;}
+    private boolean backgroundSound(class_1113 sound){return !(sound instanceof ManagedSound)&&FILTERED.contains(sound.method_4774());}
     public MusicState state(){return state;}
     public ManagedSound base(){return base;}
     public ManagedSound entrance(){return entrance;}
@@ -47,7 +53,7 @@ public final class Playback {
             else retire(next.battle());return;
         }
         boolean fresh=state==null||!state.battle().equals(next.battle());
-        if(fresh){if(state!=null)retire(state.battle());reset(false);state=next;pauseBackground();age=0;}
+        if(fresh){if(state!=null)retire(state.battle());reset(false);state=next;trainerSession=next.trainerBattle();pauseBackground();age=0;}
         else state=next;
         if(base==null||!base.method_4775().toString().equals(next.base())&&!base.method_4775().toString().equals(next.fallback())){
             boolean openingEntrance=fresh&&desiredEntrance(next)!=null;
@@ -87,13 +93,28 @@ public final class Playback {
         if(opening){base.advance();if(entrance!=null)entrance.advance();}
     }
     private void pauseBackground(){
+        backgroundFading=false;backgroundGain.snap(1);
         backgroundPaused=true;
         for(var category:FILTERED)SoundExtensionsKt.pauseSounds(manager(),null,category);
+        applyBackgroundVolume();
     }
     public void refreshSettings(){if(state!=null&&base!=null&&!ending)chooseEntrance(state);}
-    private void restoreBackground(){
-        if(!backgroundPaused)return;backgroundPaused=false;
-        for(var category:FILTERED)SoundExtensionsKt.resumeSounds(manager(),null,category);
+    private void restoreBackground(boolean fade){
+        if(!backgroundPaused&&!backgroundFading)return;
+        boolean resume=backgroundPaused;backgroundPaused=false;backgroundFading=fade;
+        backgroundGain.snap(fade?0:1);if(fade)backgroundGain.to(1,60);
+        // Queue attenuation before resuming so retained BGM cannot jump to full gain.
+        applyBackgroundVolume();
+        if(resume)for(var category:FILTERED)SoundExtensionsKt.resumeSounds(manager(),null,category);
+    }
+    private void applyBackgroundVolume(){
+        var engine=(SoundSystemAccessor)((SoundManagerAccessor)manager()).battlemusic$engine();
+        engine.battlemusic$channels().forEach((sound,channel)->{
+            if(backgroundSound(sound)){
+                float gain=engine.battlemusic$volume(sound);
+                channel.method_19735(source->source.method_19647(gain));
+            }
+        });
     }
     private class_4235.class_4236 channel(ManagedSound sound){
         return ((SoundSystemAccessor)((SoundManagerAccessor)manager()).battlemusic$engine()).battlemusic$channels().get(sound);
@@ -101,6 +122,7 @@ public final class Playback {
     private void pause(ManagedSound sound){if(sound==null)return;var channel=channel(sound);if(channel!=null){channel.method_19735(class_4224::method_19653);sound.paused=true;}}
     private void resume(ManagedSound sound){if(sound==null||!sound.paused)return;var channel=channel(sound);if(channel!=null)channel.method_19735(class_4224::method_19654);sound.paused=false;}
     public void tick(){
+        if(backgroundFading){backgroundGain.tick();applyBackgroundVolume();if(backgroundGain.settled())backgroundFading=false;}
         if(state==null)return;age++;
         // A muted category or audio-device reset can destroy channels. Allow asynchronous
         // streaming startup time, then recover from the last authoritative selection.
@@ -119,7 +141,7 @@ public final class Playback {
         }
         if(ending&&(base==null||base.gain.settled())&&(entrance==null||entrance.gain.settled())&&outgoing.isEmpty()){
             // A short quiet gap separates the final battle tail from environment BGM.
-            if(++outroSilence>=10){UUID done=state.battle();reset();retire(done);}
+            if(++outroSilence>=10){UUID done=state.battle();boolean fade=trainerSession;reset(false);restoreBackground(fade);retire(done);}
         }
     }
     private void resumeChannel(ManagedSound sound){var channel=channel(sound);if(channel!=null)channel.method_19735(class_4224::method_19654);}
@@ -136,7 +158,7 @@ public final class Playback {
     private void reset(boolean releaseBackground){
         stop(base);stop(entrance);outgoing.forEach(this::stop);retainedEntrances.values().forEach(this::stop);
         outgoing.clear();retainedEntrances.clear();base=entrance=null;entrancePokemon=null;state=null;ending=false;outroSilence=0;
-        if(releaseBackground)restoreBackground();
+        if(releaseBackground)restoreBackground(false);
     }
     public void disconnect(){reset();retired.clear();}
     public void resourcesReloaded(){

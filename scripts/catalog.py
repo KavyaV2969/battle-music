@@ -33,7 +33,7 @@ GROUPS = [
  ('terapagos', 'Terapagos', 'terapagos'),
  ('treasures_of_ruin', 'Treasures_Of_Ruin', 'wochien chienpao tinglu chiyu'),
  ('ultra_beasts', 'Ultra_Beasts', 'nihilego buzzwole pheromosa xurkitree celesteela kartana guzzlord poipole naganadel stakataka blacephalon'),
- ('victini', 'Victini_Undertale', 'victini'),
+ ('victini', 'Victini', 'victini'),
 ]
 
 def catalog():
@@ -41,7 +41,7 @@ def catalog():
     for gen in range(1, 10):
         tracks.append(dict(id=f'wild.gen{gen}', source=str(MUSIC / f'Gen{gen}.mp3'), imported=f'Gen{gen}.mp3', title=f'Generation {gen} Wild Battle'))
     for ident, filename, species in GROUPS:
-        imported = 'Victini_Undertale.mp3' if ident == 'victini' else filename + '.mp3'
+        imported = filename + '.mp3'
         tracks.append(dict(id='legendary.'+ident, source=str(MUSIC / 'Legendary' / (filename+'.mp3')), imported=imported, title=filename.replace('_',' ')))
         assignments.append(dict(id=ident, species=['cobblemon:'+s for s in species.split()], sound='battlemusic:legendary.'+ident))
     for ident, imported, species in [
@@ -51,7 +51,7 @@ def catalog():
         tracks.append(dict(id='legendary.'+ident, source=str(MUSIC / 'Legendary' / imported), imported=imported, title=imported.removesuffix('.mp3').replace('_',' ')))
         assignments.append(dict(id=ident, species=['cobblemon:'+s for s in species.split()], sound='battlemusic:legendary.'+ident))
     tracks += [dict(id='legendary.galarian_birds', source=str(MUSIC / 'Legendary/Galarian_Legendary_Birds.mp3'), imported='Galarian_Legendary_Birds.mp3', title='Galarian Legendary Birds'),
-               dict(id='legendary.victini_alternative', source=str(MUSIC / 'Legendary/Victini.mp3'), imported='Victini_Alternative.mp3', title='Victini Alternative')]
+               dict(id='legendary.victini_alternative', source=str(MUSIC / 'Legendary/Victini_Undertale.mp3'), imported='Victini_Undertale.mp3', title='Victini Undertale (Untrimmed Alternative)')]
     assignments.append(dict(id='galarian_birds', species=['cobblemon:'+s for s in ('articuno','zapdos','moltres')], aspects=['galarian'], sound='battlemusic:legendary.galarian_birds', priority=300))
     for ident, filename in [('gym','Gym.mp3'),('lorelei','Lorelei.mp3'),('bruno','Bruno.ogg'),('agatha','Agatha.ogg'),('lance','Lance.mp3'),('champion','Champion.mp3')]:
         tracks.append(dict(id='trainer.kanto.'+ident, source=str(MUSIC / 'Trainer' / filename), imported='Trainer_'+filename, title='Kanto '+ident.title()+' Battle'))

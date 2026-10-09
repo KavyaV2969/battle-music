@@ -24,9 +24,11 @@ public final class Verification {
         check(Context.labels(Set.of("gen8a"),Set.of()).contains("gen8"),"Hisui normalization");
         check(Context.labels(Set.of("gen7b"),Set.of()).contains("gen7"),"Lets Go normalization");
         check(rules.select("base",context("articuno","Galar",Set.of("galarian"),Set.of("gen8","legendary"))).orElseThrow().sound().endsWith("galarian_birds"),"Galar bird precedence");
-        check(rules.select("base",context("victini","Normal",Set.of(),Set.of("gen5","mythical"))).orElseThrow().sound().equals("battlemusic:legendary.victini"),"Victini Undertale assignment");
+        check(rules.select("base",context("victini","Normal",Set.of(),Set.of("gen5","mythical"))).orElseThrow().sound().equals("battlemusic:legendary.victini"),"Victini trimmed assignment");
         check(rules.select("entrance",context("pikachu","Normal",Set.of(),Set.of("gen1"))).isEmpty(),"ordinary Pokemon no entrance");
         var cat=JsonParser.parseString(Files.readString(root.resolve("catalog/music.json"))).getAsJsonObject();
+        var victiniTrack=java.util.stream.StreamSupport.stream(cat.getAsJsonArray("tracks").spliterator(),false).map(JsonElement::getAsJsonObject).filter(t->t.get("id").getAsString().equals("legendary.victini")).findFirst().orElseThrow();
+        check(victiniTrack.get("source").getAsString().replace('\\','/').endsWith("/Legendary/Victini.mp3"),"Victini uses the author's trimmed Desktop recording");
         for(var e:cat.getAsJsonArray("assignments")){var a=e.getAsJsonObject();for(var s:a.getAsJsonArray("species")){
             var aspects=new HashSet<String>();if(a.has("aspects"))a.getAsJsonArray("aspects").forEach(v->aspects.add(v.getAsString()));
             var c=context(s.getAsString().substring(10),"Normal",aspects,Set.of("gen9","legendary"));
@@ -82,6 +84,9 @@ public final class Verification {
         abi(root,"client-intermediary.jar","net/minecraft/class_1144","method_4873","(Lnet/minecraft/class_1113;)V");
         abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_4854","(Lnet/minecraft/class_1113;)V");
         abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_19762","()V");
+        abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_4853","(Lnet/minecraft/class_1113;)F");
+        abi(root,"client-intermediary.jar","net/minecraft/class_1140","method_43222","(FLnet/minecraft/class_3419;)F");
+        abi(root,"client-intermediary.jar","net/minecraft/class_4224","method_19647","(F)V");
         abi(root,"client-intermediary.jar","net/minecraft/class_4235","method_19723","(Lnet/minecraft/class_4225$class_4105;)Ljava/util/concurrent/CompletableFuture;");
         Files.createDirectories(root.resolve("reports"));Files.writeString(root.resolve("reports/unit-tests.json"),"{\"success\":true,\"checks\":"+checks+"}\n");
         System.out.println("PASS: "+checks+" rule, envelope, protocol and installed ABI checks");

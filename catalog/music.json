@@ -267,9 +267,9 @@
     },
     {
       "id": "legendary.victini",
-      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini_Undertale.mp3",
-      "imported": "Victini_Undertale.mp3",
-      "title": "Victini Undertale"
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini.mp3",
+      "imported": "Victini.mp3",
+      "title": "Victini"
     },
     {
       "id": "legendary.celebi",
@@ -297,9 +297,9 @@
     },
     {
       "id": "legendary.victini_alternative",
-      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini.mp3",
-      "imported": "Victini_Alternative.mp3",
-      "title": "Victini Alternative"
+      "source": "C:\\Users\\Lenovo\\Desktop\\MusicMod\\Legendary\\Victini_Undertale.mp3",
+      "imported": "Victini_Undertale.mp3",
+      "title": "Victini Undertale (Untrimmed Alternative)"
     },
     {
       "id": "trainer.kanto.gym",
